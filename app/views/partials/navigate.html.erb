@@ -1,0 +1,18 @@
+<div id="header-bar">
+  <div id="header">
+    <h1 id="logo">
+      <a href="/" title="6xue"><%= t("name")%></a>
+    </h1>
+    <ul id="nav-menu">
+      <% unless user_signed_in? %>
+        <li><%= link_to t("buttons.sign_in"), new_user_session_path%></li>
+        <li><%= link_to t("buttons.sign_up"), new_user_registration_path%></li>
+      <% else %>
+        <li><%= current_user.email%></li>
+        <li><%= link_to t("buttons.exit"), destroy_user_session_path, 
+          :method => :delete%></li>
+      <% end %>
+      <li><%= link_to t("buttons.help"), ""%></li>
+    </ul>
+  </div>
+</div>

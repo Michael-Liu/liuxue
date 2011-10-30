@@ -1,0 +1,41 @@
+<div class="sign-up">
+  <div class="signup-box">
+    <h2><%= t("buttons.sign_up") %></h2>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <table>
+        <tr>
+          <td class="td-l"><%= f.label :name %></td>
+          <td class="td-r"><%= f.text_field :name %></td>
+        </tr>
+        <tr>
+          <td class="td-l"><%= f.label :email %></td>
+          <td class="td-r"><%= f.email_field :email %></td>
+        </tr>
+        <tr>
+          <td class="td-l"><%= f.label :password %></td>
+          <td class="td-r"><%= f.password_field :password %></td>
+        </tr>
+        <tr>
+          <td class="td-l"><%= f.label :password_confirmation %></td>
+          <td class="td-r"><%= f.password_field :password_confirmation %></td>
+        </tr>
+        <tr>
+          <td class="td-l"><%= f.label :type %></td>
+          <td class="td-r">
+            <%= f.radio_button :type, "" %>&nbsp;<%= User.human_attribute_name(:type_student) %>&nbsp;&nbsp;
+            <%= f.radio_button :type, "" %>&nbsp;<%= User.human_attribute_name(:type_teacher) %>&nbsp;&nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td class="td-r">
+            <%= f.submit t("buttons.sign_up"), :class => "btn btn-red" %>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+    <%= render :partial => "devise/shared/links" %>
+  </div>
+</div>
