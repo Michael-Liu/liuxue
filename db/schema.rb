@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111030133702) do
+ActiveRecord::Schema.define(:version => 20111031152928) do
+
+  create_table "accounts", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "total_amount",     :default => 0
+    t.integer  "available_amount", :default => 0
+    t.integer  "freeze_amount",    :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -27,6 +36,11 @@ ActiveRecord::Schema.define(:version => 20111030133702) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "type"
+    t.string   "address",                :limit => 50
+    t.string   "im",                     :limit => 50
+    t.string   "telephone",              :limit => 20
+    t.string   "about",                  :limit => 500
+    t.string   "business",               :limit => 20
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

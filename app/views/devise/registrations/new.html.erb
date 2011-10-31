@@ -24,8 +24,10 @@
         <tr>
           <td class="td-l"><%= f.label :type %></td>
           <td class="td-r">
-            <%= f.radio_button :type, "" %>&nbsp;<%= User.human_attribute_name(:type_student) %>&nbsp;&nbsp;
-            <%= f.radio_button :type, "" %>&nbsp;<%= User.human_attribute_name(:type_teacher) %>&nbsp;&nbsp;
+            <%= f.radio_button :type, "Student",  :checked => true%>&nbsp;
+            <%= User.human_attribute_name(:type_student) %>&nbsp;&nbsp;
+            <%= f.radio_button :type, "Teacher" %>&nbsp;
+            <%= User.human_attribute_name(:type_teacher) %>&nbsp;&nbsp;
           </td>
         </tr>
         <tr>

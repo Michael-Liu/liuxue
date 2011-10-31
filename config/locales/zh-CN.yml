@@ -198,6 +198,7 @@ zh-CN:
         even: "必须为双数"
         taken: "已经被使用"
         record_invalid: "校验失败: %{errors}"
+        not_saved: "保存失败"
 
   activemodel:
     errors:
