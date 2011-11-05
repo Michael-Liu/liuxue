@@ -1,0 +1,37 @@
+<%= render :partial => "/partials/header_tab", 
+  :locals => {:tab_name => "select_school"} %>
+
+<div class="table-wrap">
+  <table class="table-page">
+    <thead>
+      <tr>
+        <td width="60%">
+          <%= "#{School.human_attribute_name(:name)}&" %>
+          <%= "#{School.human_attribute_name(:description)}&" %>
+          <%= "#{School.human_attribute_name(:address)}" %>
+        </td>
+        <td width="10%"><%= "#{School.human_attribute_name(:expense)}" %></td>
+        <td width="10%"><%= "#{School.human_attribute_name(:rank)}" %></td>
+        <td width="10%"><%= "#{School.human_attribute_name(:gre)}" %></td>
+        <td width="10%"><%= "#{School.human_attribute_name(:gpa)}" %></td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @schools.each do |school| %>
+        <tr>
+          <td>
+            <a class="title" href="<%= school.url %>"><%= school.name %></a><br/>
+            <%= school.description %><br/>
+            <%= school.address %>
+          </td>
+          <td class="strong"><%= school.expense %></td>
+          <td class="strong"><%= school.rank %></td>
+          <td><%= school.gre %></td>
+          <td><%= school.gpa %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= page @schools %>

@@ -5,6 +5,10 @@ Liuxue::Application.routes.draw do
     match 'users/sign_out' => 'devise/sessions#destroy'
   end
 
+  resources :countries do
+    resources :schools
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

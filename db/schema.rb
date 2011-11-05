@@ -10,13 +10,44 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111031152928) do
+ActiveRecord::Schema.define(:version => 20111103135506) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "user_id"
     t.integer  "total_amount",     :default => 0
     t.integer  "available_amount", :default => 0
     t.integer  "freeze_amount",    :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "countries", :id => false, :force => true do |t|
+    t.string "id",   :limit => 50
+    t.string "code", :limit => 50
+    t.string "name", :limit => 50
+  end
+
+  create_table "schools", :force => true do |t|
+    t.string   "country_id",  :limit => 50
+    t.string   "name",        :limit => 50
+    t.string   "description", :limit => 500
+    t.string   "url",         :limit => 100
+    t.string   "address",     :limit => 100
+    t.integer  "expense"
+    t.integer  "rank"
+    t.float    "gre"
+    t.float    "gpa"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "students", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teachers", :force => true do |t|
+    t.string   "business"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

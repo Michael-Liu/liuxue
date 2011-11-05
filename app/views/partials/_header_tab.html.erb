@@ -1,0 +1,9 @@
+<div class="tabs-footer">
+  <ul class="tabs">
+    <% tabs(@country_code).each do |tab| %>
+      <li class="<%= tab[:title] == tab_name ? "active" : "" %>">
+        <%= link_to t("tabs.#{tab[:title]}"), tab[:href] %>
+      </li>
+    <% end %>
+  </ul>
+</div>

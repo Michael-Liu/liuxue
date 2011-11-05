@@ -18,6 +18,10 @@ zh-CN:
     help: "帮助"
     more: "更多..."
     forgot_your_password: "忘记密码?"
+  tabs:
+    select_school: "选择学校"
+    request_school: "学校申请"
+    request_visa: "签证申请"
   date:
     formats:
       default: "%Y-%m-%d"
@@ -165,9 +169,17 @@ zh-CN:
         type: "类型"
         type_student: "学生"
         type_teacher: "老师"
-      content:
-        body: "内容"
-        via: "来自"
+      school:
+        name: "学校名称"
+        description: "简介"
+        url: "网址"
+        address: "地址"
+        expense: "费用"
+        rank: "排名"
+        gre: "GRE"
+        gpa: "GPA"
+      country:
+        name: "名字"
     errors:
       template: # ~ 2.3.5 backward compatible
         header:
@@ -234,4 +246,5 @@ zh-CN:
       less_than_or_equal_to: "必须小于或等于 %{count}"
       odd: "必须为单数"
       even: "必须为双数"
+  
 

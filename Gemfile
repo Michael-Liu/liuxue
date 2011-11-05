@@ -9,6 +9,8 @@ gem 'mysql'
 # gem 'nifty-generators'
 gem 'devise'
 
+gem 'will_paginate' , '3.0.1'
+
 # haml
 # gem 'hpricot'
 # gem 'ruby_parser'

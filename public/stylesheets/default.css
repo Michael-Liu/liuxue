@@ -185,6 +185,77 @@ label{
   text-align: right;
   width: 60px;
 }
+.box-country-wrap{
+  margin: 10px;
+}
+.box-country{
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  padding: 4px 8px;
+  color: #0084B4;
+  font-weight: 200px;
+  font-size: 20px;
+}
+.box-country:hover {
+  background-color: #389FEC;
+  color: #fff;
+}
+
+ul.tabs {
+position: relative;
+}
+ul.tabs li.active a {
+border: 1px solid #E5E5E5;
+border-bottom: 1px solid #fff;
+font-weight: bold;
+}
+ul.tabs li {
+  display: inline-block;
+}
+ul.tabs li a {
+padding: 3px 10px 4px;
+letter-spacing: 0.1em;
+height: 27px;
+line-height: 27px;
+font-size: 13px;
+
+border-radius: 5px 5px 0 0;
+-moz-border-radius: 5px 5px 0 0;
+-webkit-border-radius: 5px 5px 0 0;
+}
+.tabs-footer{
+  border-bottom: 1px solid #E5E5E5;
+  padding: 10px 20px 0 10px;
+}
+.table-wrap{
+  padding: 10px 0;
+}
+.table-page tr td {
+  padding: 4px 10px;
+  color: #888;
+}
+.table-page thead tr td {
+  color: #666;
+}
+.table-page thead {
+  background-color: #F0F5F8;
+  border-top: 1px solid #B8D4E8;
+  font-weight: bold;
+}
+.table-page tbody tr{
+  border-bottom: 1px solid #E5E5E5;
+}
+.table-page tbody tr:hover {
+}
+.table-page td a.title{
+  color: #005EAC;
+  font-weight: bold;
+}
+.table-page td.strong{
+  color: #666;
+  font-weight: bold;
+}
 
 /*** button ***********************/
 .btn{
