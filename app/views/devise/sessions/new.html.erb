@@ -4,11 +4,11 @@
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
       <div class="t-tr">
         <%= f.label :email %><br />
-        <%= f.email_field :email %>
+        <%= f.email_field :email, :class => "w100"  %>
       </div>
       <div class="t-tr">
         <%= f.label :password %><br />
-        <%= f.password_field :password %>
+        <%= f.password_field :password, :class => "w100"  %>
       </div>
       <div class="t-tr">
         <%= f.submit t("buttons.sign_in"), :class => "btn btn-submit" %>

@@ -29,6 +29,7 @@ table {
   width: 100%;
   table-layout: fixed;
 }
+select,
 input[type="text"], 
 input[type="email"], 
 input[type="password"] {
@@ -46,7 +47,7 @@ input[type="password"] {
   -moz-border-radius: 1px;
   border-radius: 1px;
 
-  width: 100%;
+  /** width: 100%; **/
   height: 30px;
   font-size: 15px;
 }
@@ -244,17 +245,32 @@ border-radius: 5px 5px 0 0;
   font-weight: bold;
 }
 .table-page tbody tr{
-  border-bottom: 1px solid #E5E5E5;
+  /** border-bottom: 1px solid #E5E5E5; **/
+  border-bottom: 1px solid #B8D4E8;
 }
 .table-page tbody tr:hover {
 }
 .table-page td a.title{
   color: #005EAC;
   font-weight: bold;
+  font-size: 13px;
 }
 .table-page td.strong{
   color: #666;
   font-weight: bold;
+}
+.filter {
+  padding: 10px;
+  padding-bottom: 0;
+}
+.w-150{
+  width: 150px;
+}
+.w-210{
+  width: 210px;
+}
+.w100{
+  width: 100%;
 }
 
 /*** button ***********************/
@@ -265,9 +281,9 @@ border-radius: 5px 5px 0 0;
   color: #555;
   font-size: 13px;
   font-weight: bold;
-  height: 27px;
+  height: 30px;
   padding: 0 8px;
-  line-height: 27px;
+  line-height: 30px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -378,4 +394,15 @@ border-radius: 5px 5px 0 0;
   -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.btn-green{
+  border: 1px solid transparent;
+  color: white;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  background-color: #88C185;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#005D07),to(#88C185));
+  background-image: -webkit-linear-gradient(top,#005D07,#88C185);
+  background-image: -moz-linear-gradient(top,#005D07,#88C185);
+  background-image: -ms-linear-gradient(top,#005D07,#88C185);
 }

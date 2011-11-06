@@ -1,28 +1,48 @@
 <%= render :partial => "/partials/header_tab", 
   :locals => {:tab_name => "select_school"} %>
 
+<div class="filter">
+  <%= form_for(@school, :url => "") do |f| %>
+    <%= f.label :gre %>
+    <%= f.text_field :gre, :class => "w-150" %>&nbsp;
+    <%= f.label :gpa %>
+    <%= f.text_field :gpa, :class => "w-150" %>&nbsp;
+
+    <%= radio_button_tag "student_type", "heigh", :checked => true %>
+    <%= School.human_attribute_name(:type_university) %>
+    <%= radio_button_tag "student_type", "university" %>
+    <%= School.human_attribute_name(:type_heigh) %>
+
+    <%= select("major", "id", {"CFC" => '1', "FF" => '2'}) %>
+
+    <%= f.submit t("buttons.search"), :class => "btn btn-submit" %>&nbsp;&nbsp;
+    <button type="button" class="btn btn-submit"><%= t("buttons.next") %></button>
+  <% end %>
+</div>
+
 <div class="table-wrap">
   <table class="table-page">
     <thead>
       <tr>
-        <td width="60%">
+        <td width="3%">&nbsp;</td>
+        <td width="61%">
           <%= "#{School.human_attribute_name(:name)}&" %>
           <%= "#{School.human_attribute_name(:description)}&" %>
           <%= "#{School.human_attribute_name(:address)}" %>
         </td>
-        <td width="10%"><%= "#{School.human_attribute_name(:expense)}" %></td>
-        <td width="10%"><%= "#{School.human_attribute_name(:rank)}" %></td>
-        <td width="10%"><%= "#{School.human_attribute_name(:gre)}" %></td>
-        <td width="10%"><%= "#{School.human_attribute_name(:gpa)}" %></td>
+        <td width="9%"><%= "#{School.human_attribute_name(:expense)}" %></td>
+        <td width="9%"><%= "#{School.human_attribute_name(:rank)}" %></td>
+        <td width="9%"><%= "#{School.human_attribute_name(:gre)}" %></td>
+        <td width="9%"><%= "#{School.human_attribute_name(:gpa)}" %></td>
       </tr>
     </thead>
     <tbody>
       <% @schools.each do |school| %>
         <tr>
+          <td><%= check_box_tag "ids", school.id %></td>
           <td>
             <a class="title" href="<%= school.url %>"><%= school.name %></a><br/>
             <%= school.description %><br/>
-            <%= school.address %>
           </td>
           <td class="strong"><%= school.expense %></td>
           <td class="strong"><%= school.rank %></td>
