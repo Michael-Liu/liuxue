@@ -2,18 +2,29 @@
   :locals => {:tab_name => "select_school"} %>
 
 <div class="filter">
-  <%= form_for(@school, :url => "") do |f| %>
+  <%= form_for(@school, :html => {:method => :get},
+               :url => country_schools_path(@school.country_id)) do |f| %>
+    <%= f.hidden_field :country_id %>
     <%= f.label :gre %>
-    <%= f.text_field :gre, :class => "w-150" %>&nbsp;
+    <%= f.text_field :gre, :class => "w-100" %>&nbsp;
     <%= f.label :gpa %>
-    <%= f.text_field :gpa, :class => "w-150" %>&nbsp;
+    <%= f.text_field :gpa, :class => "w-100" %>&nbsp;
 
-    <%= radio_button_tag "student_type", "heigh", :checked => true %>
-    <%= School.human_attribute_name(:type_university) %>
-    <%= radio_button_tag "student_type", "university" %>
-    <%= School.human_attribute_name(:type_heigh) %>
+    <%= f.label :gmat %>
+    <%= f.text_field :gmat, :class => "w-100" %>&nbsp;
+    <%= f.label :toefl %>
+    <%= f.text_field :toefl, :class => "w-100" %>&nbsp;
+    <%= f.label :ielts %>
+    <%= f.text_field :ielts, :class => "w-100" %>&nbsp;
 
-    <%= select("major", "id", {"CFC" => '1', "FF" => '2'}) %>
+    <!--
+      <%= radio_button_tag "student_type", "heigh", :checked => true %>
+      <%= School.human_attribute_name(:type_university) %>
+      <%= radio_button_tag "student_type", "university" %>
+      <%= School.human_attribute_name(:type_heigh) %>
+
+      <%= select("major", "id", Major.kv) %>
+    -->
 
     <%= f.submit t("buttons.search"), :class => "btn btn-submit" %>&nbsp;&nbsp;
     <button type="button" class="btn btn-submit"><%= t("buttons.next") %></button>

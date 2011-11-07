@@ -1,3 +1,5 @@
+require 'redis-store'
+
 Liuxue::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -26,6 +28,7 @@ Liuxue::Application.configure do
 
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
+  config.cache_store = :redis_store, $_app_cache.server
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this

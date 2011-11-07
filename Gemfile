@@ -23,9 +23,9 @@ gem 'paperclip'
 gem 'whenever', :require => false
 
 # redis cache
-# gem 'SystemTimer'
-# gem 'redis'
-# gem 'redis-store', '1.0.0.rc1'
+gem 'SystemTimer'
+gem 'redis'
+gem 'redis-store', '1.0.0.rc1'
 
 # Use unicorn as the web server
 # gem 'unicorn'

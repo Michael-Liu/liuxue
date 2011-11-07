@@ -1,7 +1,19 @@
 class SchoolsController < ApplicationController
   def index
-    @school = params[:school] || School.new
-    @country_code = params[:country_id]
-    @schools = School.where(:country_id => @country_code).page(params[:page])
+    @school = (params[:school] && School.new(params[:school]))|| School.new
+    @school.country_id = params[:country_id]
+
+    # 
+    sql = "country_id = :country_id"
+    @school.gre.blank? || sql << " and gre <= :gre"
+    @school.gpa.blank? || sql << " and gpa <= :gpa"
+    @school.gmat.blank? || sql << " and gmat <= :gmat"
+    @school.toefl.blank? || sql << " and toefl <= :toefl"
+    @school.ielts.blank? || sql << " and ielts <= :ielts"
+
+    params[:school] ||= {}
+    params[:school][:country_id] = params[:country_id]
+
+    @schools = School.where(sql, params[:school]).page(params[:page])
   end
 end

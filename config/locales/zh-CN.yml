@@ -179,6 +179,9 @@ zh-CN:
         rank: "排名"
         gre: "GRE"
         gpa: "GPA"
+        gmat: "GMAT"
+        toefl: "TOEFL"
+        ielts: "IELTS"
         type_heigh: "高中"
         type_university: "大学"
       country:

@@ -1,3 +1,3 @@
-<% Country.all.each do |country| %>
+<% Country.cache.each do |country| %>
   <%= link_to country.name, "/countries/#{country.code}/schools", :class => "box-country" %>
 <% end %>
