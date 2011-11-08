@@ -17,52 +17,12 @@
     <%= f.label :ielts %>
     <%= f.text_field :ielts, :class => "w-100" %>&nbsp;
 
-    <!--
-      <%= radio_button_tag "student_type", "heigh", :checked => true %>
-      <%= School.human_attribute_name(:type_university) %>
-      <%= radio_button_tag "student_type", "university" %>
-      <%= School.human_attribute_name(:type_heigh) %>
-
-      <%= select("major", "id", Major.kv) %>
-    -->
 
     <%= f.submit t("buttons.search"), :class => "btn btn-submit" %>&nbsp;&nbsp;
     <button type="button" class="btn btn-submit"><%= t("buttons.next") %></button>
   <% end %>
 </div>
 
-<div class="table-wrap">
-  <table class="table-page">
-    <thead>
-      <tr>
-        <td width="3%">&nbsp;</td>
-        <td width="61%">
-          <%= "#{School.human_attribute_name(:name)}&" %>
-          <%= "#{School.human_attribute_name(:description)}&" %>
-          <%= "#{School.human_attribute_name(:address)}" %>
-        </td>
-        <td width="9%"><%= "#{School.human_attribute_name(:expense)}" %></td>
-        <td width="9%"><%= "#{School.human_attribute_name(:rank)}" %></td>
-        <td width="9%"><%= "#{School.human_attribute_name(:gre)}" %></td>
-        <td width="9%"><%= "#{School.human_attribute_name(:gpa)}" %></td>
-      </tr>
-    </thead>
-    <tbody>
-      <% @schools.each do |school| %>
-        <tr>
-          <td><%= check_box_tag "ids", school.id %></td>
-          <td>
-            <a class="title" href="<%= school.url %>"><%= school.name %></a><br/>
-            <%= school.description %><br/>
-          </td>
-          <td class="strong"><%= school.expense %></td>
-          <td class="strong"><%= school.rank %></td>
-          <td><%= school.gre %></td>
-          <td><%= school.gpa %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<%= render @schools %>
 
 <%= page @schools %>

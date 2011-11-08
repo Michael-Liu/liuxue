@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111107150312) do
+ActiveRecord::Schema.define(:version => 20111108143611) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "user_id"
@@ -22,9 +22,10 @@ ActiveRecord::Schema.define(:version => 20111107150312) do
   end
 
   create_table "countries", :id => false, :force => true do |t|
-    t.string "id",   :limit => 50
-    t.string "code", :limit => 50
-    t.string "name", :limit => 50
+    t.string "id",       :limit => 50
+    t.string "code",     :limit => 50
+    t.string "name",     :limit => 50
+    t.string "currency", :limit => 10
   end
 
   create_table "majors", :id => false, :force => true do |t|
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20111107150312) do
     t.float    "toefl"
     t.float    "ielts"
     t.float    "gmat"
+    t.string   "photo",       :limit => 200
   end
 
   create_table "students", :force => true do |t|

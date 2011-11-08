@@ -14,6 +14,9 @@ a {
   text-decoration: none;
   outline: none;
 }
+div, span{
+  display: block;
+}
 a:hover {
   cursor: pointer;
   color: #111;
@@ -263,6 +266,64 @@ border-radius: 5px 5px 0 0;
   padding: 10px;
   padding-bottom: 0;
 }
+
+/** box-item school ***/
+.box-item{
+  padding: 10px 10px 10px 10px;
+  margin: 5px 0;
+  position: relative;
+  border-bottom: 1px solid #E5E5E5;
+}
+.box-item .box-l{
+  float: left;
+}
+.box-item .box-r{
+  margin-left: 150px;
+}
+.box-item .box-l .pt{
+  /** border: 1px solid #999; **/
+  overflow: hidden;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.box-item .box-l ul li{
+  font-size: 11px;
+}
+.box-item .box-l img, .box-item .box-l .pt{
+  width: 130px;
+  height: 78px;
+}
+.box-item .box-r .rank{
+  float: left;
+  margin-right: 10px;
+  background-color: #f7b11a;
+  color: #fff;
+  font-weight: bold;
+  padding: 9px 6px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.box-item .box-r .title{
+}
+.box-item .box-r .title a{
+  color: #0072B2;
+  font-weight: bold;
+  font-size: 15px;
+}
+.box-item .box-r .title span{
+  color: #777;
+  font-size: 11px;
+}
+.box-item .box-r .text{
+  color: #333;
+}
+
+.f777{
+  color: #777;
+}
+
 .w-150{
   width: 150px;
 }
