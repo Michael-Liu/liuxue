@@ -1,0 +1,26 @@
+<div class="box-item">
+  <div class="box-l">
+    <div class="pt">
+      <img src="<%= school.photo %>"/>
+    </div>
+    <ul>
+      <li>
+        <font class="f777">
+          <%= School.human_attribute_name(:expense) %>=
+        </font>
+        <%= school.expense_show %>
+      </li>
+    </ul>
+  </div>
+  <div class="box-r">
+    <div class="rank">#<%= school.rank %></div>
+    <div class="title">
+      <a href="<%= school.url %>"><%= school.name %></a>
+      <span><%= school.address %></span>
+    </div>
+    <div class="text">
+      <%= school.description %>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
