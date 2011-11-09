@@ -136,13 +136,26 @@ label{
   width: auto;
   padding: 5px;
   /** background: whiteSmoke; **/
-  border-bottom: 1px solid #E5E5E5;
+  /** border-bottom: 1px solid #E5E5E5; **/
   overflow: hidden;
 }
 #content{
 }
 #footer{
   margin: 10px 0;
+}
+.body-left{
+  float: left;
+  width: 720px;
+}
+.body-right{
+  float: right;
+  width: 260px;
+}
+.box-tip{
+  background-color: #EFF5FB;
+  margin-top: 15px;
+  padding: 5px;
 }
 
 /****************************/
@@ -206,6 +219,43 @@ label{
   color: #fff;
 }
 
+.tabs-footer{
+  background-color: #C1D9F3;
+  height: 38px;
+background-image: none;
+overflow: hidden;
+padding: 0;
+}
+ul.tabs{
+  float: left;
+font-size: 14px;
+font-weight: bold;
+}
+ul.tabs li{
+  float: left;
+line-height: 28px;
+padding: 2px 5px 0;
+}
+ul.tabs li a{
+padding: 0 10px;
+margin-top: 3px;
+height: 28px;
+line-height: 28px;
+display: block;
+float: left;
+-moz-border-radius: 3px;
+-khtml-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+white-space: nowrap;
+color: #1E5494;
+}
+ul.tabs li.active a{
+  background: #528BCB;
+  color: #fff;
+}
+
+/***
 ul.tabs {
 position: relative;
 }
@@ -232,6 +282,8 @@ border-radius: 5px 5px 0 0;
   border-bottom: 1px solid #E5E5E5;
   padding: 10px 20px 0 10px;
 }
+***/
+
 .table-wrap{
   padding: 10px 0;
 }

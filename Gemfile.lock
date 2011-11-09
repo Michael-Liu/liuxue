@@ -171,6 +171,7 @@ DEPENDENCIES
   launchy
   mongrel
   mysql
+  nokogiri
   paperclip
   rails (= 3.0.7)
   redis

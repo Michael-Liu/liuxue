@@ -19,6 +19,9 @@ gem 'will_paginate' , '3.0.1'
 # upload file
 gem 'paperclip'
 
+# xml|html
+gem 'nokogiri'
+
 # task
 gem 'whenever', :require => false
 
@@ -57,7 +60,6 @@ end
 
 # Bundle the extra gems:
 # gem 'bj'
-# gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
