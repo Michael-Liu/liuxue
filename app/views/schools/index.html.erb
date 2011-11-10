@@ -26,15 +26,34 @@
 <div class="body-left">
 <%= render @schools %>
 </div>
+
+<script type="text/javascript">
+  //handle select box
+  $(function(){
+    $('.box-item .box-r .rank').click(function(){
+      if($(this).hasClass('active')){
+        $(this).removeClass('active');
+      }else{
+        $(this).addClass('active');
+      }
+    });
+  });
+</script>
+
 <div class="body-right">
   <div class="box-tip">
-    <h3>名词解释</h3>
+    <h2><%= t("help.text") %></h2>
     <p>
-      GRE: aaaaaaa<br/>
-      GPA: aaaaaaa<br/>
-      GMAT: aaaaaaa<br/>
-      TOEFL: aaaaaaa<br/>
-      IELTS: aaaaaaa<br/>
+      <%= link_to School.human_attribute_name(:gre), "http://baike.baidu.com/view/1004.htm", :target => "_blank" %>
+      <%= t("help.gre") %><br/>
+      <%= link_to School.human_attribute_name(:gpa), "http://baike.baidu.com/view/36656.htm", :target => "_blank" %>
+      <%= t("help.gpa") %><br/>
+      <%= link_to School.human_attribute_name(:gmat), "http://baike.baidu.com/view/8947.htm", :target => "_blank" %>
+      <%= t("help.gmat") %><br/>
+      <%= link_to School.human_attribute_name(:toefl), "http://baike.baidu.com/view/7477.htm", :target => "_blank" %>
+      <%= t("help.toefl") %><br/>
+      <%= link_to School.human_attribute_name(:ielts), "http://baike.baidu.com/view/31701.htm", :target => "_blank" %>
+      <%= t("help.ielts") %><br/>
     </p>
   </div>
 </div>
