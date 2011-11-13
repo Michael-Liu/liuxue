@@ -5,6 +5,8 @@ Liuxue::Application.routes.draw do
     match 'users/sign_out' => 'devise/sessions#destroy'
   end
 
+  match ':id/home' => 'users#home'
+
   resources :countries do
     resources :schools
   end

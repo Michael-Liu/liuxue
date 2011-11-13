@@ -1,8 +1,16 @@
 <div class="tabs-footer">
   <ul class="tabs">
-    <% tabs(@country_code).each do |tab| %>
+    <% tabs(@cc).each do |tab| %>
       <li class="<%= tab[:title] == tab_name ? "active" : "" %>">
         <%= link_to t("tabs.#{tab[:title]}"), tab[:href] %>
+      </li>
+    <% end %>
+
+    <% if user_signed_in? %>
+      <li class="r <%= "#{tab_name == 'settings' ? 'active' : ''}" %>">
+        <a href='<%= "/#{current_user.id}/home?cc=#{@cc}" %>'>
+          <%= t("buttons.settings") %><span class="settings"></span>
+        </a>
       </li>
     <% end %>
   </ul>

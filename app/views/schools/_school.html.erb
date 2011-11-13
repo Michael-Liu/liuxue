@@ -15,7 +15,7 @@
   <div class="box-r">
     <div class="rank" school_id="<%= school.id %>">#<%= school.rank %></div>
     <div class="title">
-      <a href="<%= school.url_show %>"><%= school.name %></a>
+      <%= link_to school.name, school.url_show, :target => "_blank" %>
       <span><%= school.address %></span>
     </div>
     <div class="text">

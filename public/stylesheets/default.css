@@ -14,7 +14,7 @@ a {
   text-decoration: none;
   outline: none;
 }
-div, span{
+div, span, a{
   display: block;
 }
 a:hover {
@@ -244,8 +244,33 @@ label{
   /** border-radius: 4px; **/
   /** border: 1px solid #4183C4; **/
 }
+/************* ul .menus **********************/
+.menus-wrap {
+  border-left: 1px solid #C1D9F3;
+}
+ul.menus {
+  margin-top: 5px;
+  padding: 5px 10px;
+  padding-right: 0px;
+}
+ul.menus li.title {
+  font-size: 13px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  /** border-bottom: 1px solid #C1D9F3; **/
+}
+ul.menus li {
+  position: relative;
+}
+ul.menus li a{
+  padding: 2px 12px;
+}
+ul.menus li a:hover {
+  background: #C1D9F3;
+}
+
+/************ ul .tabs ***********************/
 ul.tabs{
-  float: left;
   font-size: 14px;
   font-weight: bold;
 }
@@ -268,9 +293,30 @@ ul.tabs li a{
   white-space: nowrap;
   color: #1E5494;
 }
+ul.tabs li a:hover {
+  text-decoration: underline;
+}
+ul.tabs li.r{
+  float: right;
+}
+ul.tabs li.r a{
+}
+ul.tabs li.r .settings{
+  display: inline-block;
+  vertical-align: middle;
+  background: url('/images/settings.png') no-repeat -3px -20px;
+  height: 24px;
+  width: 20px;
+}
+ul.tabs li.active .settings{
+  background-position: 3px 2px;
+}
 ul.tabs li.active a{
   background: #528BCB;
   color: #fff;
+}
+ul.tabs li.active a:hover {
+  text-decoration: none;
 }
 
 /***

@@ -1,4 +1,7 @@
 class SchoolsController < ApplicationController
+
+  before_filter :country_code, :only => [:index]
+
   def index
     @school = (params[:school] && School.new(params[:school]))|| School.new
     @school.country_id = params[:country_id]
