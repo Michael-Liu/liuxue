@@ -16,4 +16,13 @@ class ApplicationController < ActionController::Base
     @cc = params[:cc] || params[:country_id] || 'meiguo'
     flash[:notice] = nil
   end
+
+  def after_sign_out_path_for(resource)
+    # params[:reture_url] || super(resource)
+    country_schools_path(@cc)
+  end
+  def after_sign_in_path_for(resource)
+    params[:return_url] || super(resource)
+  end
+
 end

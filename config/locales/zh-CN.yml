@@ -3,6 +3,7 @@
 
 zh-CN:
   name: "6xue"
+  thanks: "谢谢！"
   copyright: "© %{year} 6xue01.com by myliang"
   help:
     text: "帮助"
@@ -233,6 +234,7 @@ zh-CN:
         taken: "已经被使用"
         record_invalid: "校验失败: %{errors}"
         not_saved: "保存失败"
+        not_found: "没有找到"
 
   activemodel:
     errors:
@@ -269,5 +271,20 @@ zh-CN:
       less_than_or_equal_to: "必须小于或等于 %{count}"
       odd: "必须为单数"
       even: "必须为双数"
+      not_saved: "保存失败"
+      already_confirmed: "was already confirmed"  
+      not_locked: "was not locked"
+  devise:  
+    failure:  
+      unauthenticated: 'You need to sign in or sign up before continuing.'  
+      unconfirmed: 'You have to confirm your account before continuing.'  
+      locked: 'Your account is locked.'  
+      invalid: 'OH NOES! ERROR IN TEH EMAIL!'  
+      invalid_token: 'Invalid authentication token.'  
+      timeout: 'Your session expired, please sign in again to continue.'  
+      inactive: 'Your account was not activated yet.'  
+    sessions:  
+      signed_in: 'Signed in successfully.'  
+      signed_out: 'Signed out successfully.'
   
 

@@ -45,6 +45,12 @@ module Liuxue
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
+    # session time out 
+    # config.action_controller.session_options = {:expire_after => 30.minutes.from_now}
+    #
+    # action_view
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| %Q(#{html_tag}).html_safe }
+
     # devise layout
     config.to_prepare do
       # Devise::SessionsController.layout "devise"

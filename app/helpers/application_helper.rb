@@ -6,7 +6,8 @@ module ApplicationHelper
   end
 
   def page(p)
-    simple_format "<div class=\"digg_pagination\">#{ will_paginate p, :container => false}</div>"
+    # simple_format "<div class=\"digg_pagination\">#{ will_paginate p, :container => false}</div>"
+    "<div class=\"digg_pagination\">#{ will_paginate p, :container => false}</div>".html_safe
   end
 
   # my menus
