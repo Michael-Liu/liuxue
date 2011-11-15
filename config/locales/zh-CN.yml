@@ -31,6 +31,11 @@ zh-CN:
     select_school: "选择学校"
     request_school: "学校申请"
     request_visa: "签证申请"
+    modify_password: "修改密码"
+  picture:
+    curr: "当前头像"
+    edit: "更改头像"
+    tips: "请选择新的照片文件，文件需小于5MB"
   date:
     formats:
       default: "%Y-%m-%d"
@@ -174,6 +179,8 @@ zh-CN:
         email: "电子邮件"
         password: "密码"
         remember_me: "记住密码"
+        old_password: "当前密码"
+        new_password: "新密码"
         password_confirmation: "重复密码"
         type: "类型"
         type_student: "学生"
@@ -235,6 +242,7 @@ zh-CN:
         body: "如下字段出现错误："
 
   errors:
+    success: "操作成功"
     condition:
       over_max: "您的搜索结果已经超出了最大限制"
     email_password: "用户名，密码错误，请重新输入"

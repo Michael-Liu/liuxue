@@ -11,6 +11,15 @@ Liuxue::Application.routes.draw do
     resources :schools
   end
 
+  resource :users do
+    member do
+      get :edit_password
+      put :update_password
+      get :edit_avatar
+      get :update_avatar
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -44,5 +44,14 @@ module Liuxue
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    # devise layout
+    config.to_prepare do
+      # Devise::SessionsController.layout "devise"
+      # Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "devise" }
+      # Devise::ConfirmationsController.layout "devise"
+      # Devise::UnlocksController.layout "devise"            
+      # Devise::PasswordsController.layout "bg"        
+    end
   end
 end

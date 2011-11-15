@@ -1,16 +1,12 @@
 <div class="menus-wrap">
-  <ul class="menus">
-    <li class="title">帐户中心</li>
-    <li><%= link_to "基本信息", "" %></li>
-    <li><%= link_to "帐户余额", "" %></li>
-    <li><%= link_to "修改密码", "" %></li>
-    <li><%= link_to "头像设置", "" %></li>
-  </ul>
-  <ul class="menus">
-    <li class="title">帐户中心</li>
-    <li><%= link_to "基本信息", "" %></li>
-    <li><%= link_to "帐户余额", "" %></li>
-    <li><%= link_to "修改密码", "" %></li>
-    <li><%= link_to "头像设置", "" %></li>
-  </ul>
+  <% menus.each do |k, v| %>
+    <ul class="menus">
+      <li class="title"><%= k %></li>
+      <% v.each do |m| %>
+        <li class="<%= m[:href] == current_href ? 'active': '' %>">
+          <%= link_to "#{m[:title]}", m[:href] %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>

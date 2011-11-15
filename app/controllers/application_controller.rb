@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :country_code
+
   # WillPaginate.per_page = 10
   #
   # devise
@@ -12,5 +14,6 @@ class ApplicationController < ActionController::Base
   private
   def country_code
     @cc = params[:cc] || params[:country_id] || 'meiguo'
+    flash[:notice] = nil
   end
 end

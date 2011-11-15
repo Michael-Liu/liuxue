@@ -1,0 +1,6 @@
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% elsif error && !error.errors.empty? %>
+  <div class="notice"><%= error.errors.full_messages.join('') %></div>
+<% end %>
+

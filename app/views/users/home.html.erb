@@ -1,8 +1,6 @@
-<%= render :partial => "/partials/header_tab", 
-  :locals => {:tab_name => "settings"} %>
-
-<div class="body-left">
-</div>
-<div class="body-right" style="width: 160px;">
-<%= render :partial => "/partials/home_menu" %>
-</div>
+<% content_for :body_left do %>
+<% end %>
+<% content_for :body_right do %>
+  <%= render :partial => "partials/home_menu", 
+    :locals => {:current_href => "index"} %>
+<% end %>
