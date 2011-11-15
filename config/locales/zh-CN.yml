@@ -32,6 +32,7 @@ zh-CN:
     request_school: "学校申请"
     request_visa: "签证申请"
     modify_password: "修改密码"
+    modify_avatar: "头像设置"
   picture:
     curr: "当前头像"
     edit: "更改头像"

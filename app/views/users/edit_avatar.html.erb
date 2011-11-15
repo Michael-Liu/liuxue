@@ -1,4 +1,12 @@
 <% content_for :body_left do %>
+  <div class="tabs-1-footer">
+    <ul class="tabs-1">
+      <li class="active">
+        <%= link_to t("tabs.modify_avatar"), "javascript:void(0);" %>
+      </li>
+    </ul>
+  </div>
+
   <div class='curr-picture'> 
     <h4><%= t("picture.curr") %></h4> 
     <% if current_user.avatar %>
