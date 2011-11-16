@@ -2,7 +2,7 @@ class RegistrationsController < ::Devise::RegistrationsController
 
   before_filter :auth, :except => [:new, :create]
   before_filter :init_resource, :only => [:edit_password, :edit_avatar]
-  layout "bg"
+  layout :set_layout
 
   def edit_password; end
   def update_password
@@ -46,5 +46,13 @@ class RegistrationsController < ::Devise::RegistrationsController
 
   def init_resource
     resource = build_resource({})
+  end
+
+  def set_layout
+    if ["new"].include?(params[:action])
+      "application"
+    else
+      "bg"
+    end
   end
 end
