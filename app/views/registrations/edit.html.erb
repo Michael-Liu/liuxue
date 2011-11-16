@@ -6,8 +6,29 @@
     <%= devise_error_messages! %>
 
     <div class="tr">
+      <%= f.label :name, :class => "field" %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="tr">
       <%= f.label :email, :class => "field" %>
       <%= f.email_field :email %>
+    </div>
+    <div class="tr">
+      <%= f.label :telephone, :class => "field" %>
+      <%= f.text_field :telephone %>
+    </div>
+    <div class="tr">
+      <%= f.label :im, :class => "field" %>
+      <%= f.text_field :im %>
+    </div>
+    <div class="tr">
+      <%= f.label :address, :class => "field" %>
+      <%= f.select :province_id, Province.cache.collect {|p| [p.name, p.id]} %>
+      <%= f.text_field :address %>
+    </div>
+    <div class="tr">
+      <%= f.label :about, :class => "field" %>
+      <%= f.text_area :about %>
     </div>
 
     <div class="tr-btn">

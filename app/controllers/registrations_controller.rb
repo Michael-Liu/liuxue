@@ -39,7 +39,7 @@ class RegistrationsController < ::Devise::RegistrationsController
   end
 
   def update_user
-    if current_user.update_attributes(params[current_user.type.downcase])
+    if current_user.update_attributes(params[:user])
       set_flash_notice_success
     end
   end

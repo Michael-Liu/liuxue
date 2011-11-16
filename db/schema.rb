@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111115081026) do
+ActiveRecord::Schema.define(:version => 20111116133820) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "user_id"
@@ -32,6 +32,11 @@ ActiveRecord::Schema.define(:version => 20111115081026) do
     t.string "id",   :limit => 50
     t.string "code", :limit => 50
     t.string "name", :limit => 50
+  end
+
+  create_table "provinces", :force => true do |t|
+    t.string "code"
+    t.string "name"
   end
 
   create_table "schools", :force => true do |t|
@@ -87,6 +92,7 @@ ActiveRecord::Schema.define(:version => 20111115081026) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "province_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

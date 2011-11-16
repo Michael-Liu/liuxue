@@ -191,6 +191,10 @@ zh-CN:
         type: "类型"
         type_student: "学生"
         type_teacher: "老师"
+        address: "详细地址"
+        telephone: "联系电话"
+        im: "QQ MSN"
+        about: "关于我们"
       school:
         name: "学校名称"
         description: "简介"

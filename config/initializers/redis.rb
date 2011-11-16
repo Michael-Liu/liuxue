@@ -37,3 +37,4 @@ $_app_cache.init
 # init model data that need to cached
 $_app_cache.set_object "majors", Major.all
 $_app_cache.set_object "countries", Country.all
+$_app_cache.set_object "provinces", Province.all
