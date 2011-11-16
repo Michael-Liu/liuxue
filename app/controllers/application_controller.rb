@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   # current_user
   # user_session
 
-  private
+  protected
   def country_code
     @cc = params[:cc] || params[:country_id] || 'meiguo'
     flash[:notice] = nil
@@ -23,6 +23,16 @@ class ApplicationController < ActionController::Base
   end
   def after_sign_in_path_for(resource)
     params[:return_url] || super(resource)
+  end
+
+  def set_flash_notice_success
+    flash[:notice] = I18n.t "errors.success"
+  end
+
+  def auth
+    unless user_signed_in?
+      redirect_to new_user_session
+    end
   end
 
 end

@@ -1,0 +1,23 @@
+<% content_for :body_left do %>
+  <%= render :partial => "partials/tab_1", 
+    :locals => { 
+    :tabs => [:active => true, :a => menus_account[0]]} %>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="tr">
+      <%= f.label :email, :class => "field" %>
+      <%= f.email_field :email %>
+    </div>
+
+    <div class="tr-btn">
+      <%= submit_tag t("buttons.save"), :class => "btn btn-submit" %>
+    </div>
+  <% end %>
+<% end %>
+
+<% content_for :body_right do %>
+  <%= render :partial => "partials/home_menu", 
+    :locals => {:current_href => menus_account[0][:href]} %>
+<% end %>
+

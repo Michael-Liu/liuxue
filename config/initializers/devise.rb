@@ -213,19 +213,20 @@ end
 # rewrite devise_error_messsages
 module DeviseHelper
   def devise_error_messages!
-    return "" if resource.errors.empty?
+    if !resource.nil? && !resource.errors.empty?
 
-    messages = resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
-    sentence = I18n.t("errors.messages.not_saved",
-                      :count => resource.errors.count,
-                      :resource => resource.class.model_name.human.downcase)
+      messages = 
+        "<ul>#{resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join}</ul>"
+    else
+      messages = flash[:notice] 
+    end
 
-    html = <<-HTML
+    html = messages && <<-HTML
     <div class="notice">
-      <ul>#{messages}</ul>
+    #{messages}
     </div>
     HTML
 
-    html.html_safe
+    html && html.html_safe
   end
 end

@@ -1,0 +1,9 @@
+<div class="tabs-1-footer">
+  <ul class="tabs-1">
+    <% tabs.each do |tab| %>
+      <li class="<%= tab[:active] && "active" || "" %>">
+        <%= link_to tab[:a][:title], tab[:a][:href] %>
+      </li>
+    <% end %>
+  </ul>
+</div>

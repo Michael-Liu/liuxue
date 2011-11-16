@@ -10,16 +10,20 @@ module ApplicationHelper
     "<div class=\"digg_pagination\">#{ will_paginate p, :container => false}</div>".html_safe
   end
 
+  def menus_account
+      [{:title => t("tabs.user_infor"), :href => edit_user_path},
+      {:title => t("tabs.account_infor"), :href => ""},
+      {:title => t("tabs.modify_password"), :href => edit_password_user_path},
+      {:title => t("tabs.modify_avatar"), :href => edit_avatar_user_path}]
+  end
+
+  def menus_order
+    [{:title => t("tabs.user_order"), :href => ""}]
+  end
+
   # my menus
   def menus
-    {"帐号中心" => [
-      {:title => "基本信息", :href => ""},
-      {:title => "帐户余额", :href => ""},
-      {:title => "修改密码", :href => edit_password_users_path},
-      {:title => "头像设置", :href => edit_avatar_users_path}
-    ],"订单中心" => [
-      {:title => "我的订单", :href => ""}
-    ]}
+    {t("tabs.account_center") => menus_account, t("tabs.order_center") => menus_order}
   end
 
 end

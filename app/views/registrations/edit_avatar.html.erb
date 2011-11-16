@@ -13,10 +13,9 @@
   </div>
   <div class="edit-picture">
     <h4><%= t("picture.edit") %></h4> 
-    <%= form_for current_user, :url => update_avatar_users_path,
+    <%= form_for current_user, :url => update_avatar_user_path,
       :html => { :multipart => true, :method => :put } do |f| %>
-      <%= render :partial => "partials/error",
-        :locals => { :error => current_user }%>
+      <%= devise_error_messages! %>
       <div class="tr">
         <%= t("picture.tips") %><br/>
         <%= f.file_field :avatar %>
@@ -30,5 +29,5 @@
 
 <% content_for :body_right do %>
   <%= render :partial => "partials/home_menu", 
-    :locals => {:current_href => edit_avatar_users_path} %>
+    :locals => {:current_href => menus_account[3][:href]} %>
 <% end %>

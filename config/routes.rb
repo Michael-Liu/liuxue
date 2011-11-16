@@ -1,8 +1,19 @@
 Liuxue::Application.routes.draw do
-  devise_for :users
+  devise_for :users,
+    :controllers => {:registrations => 'registrations', :sessions => 'sessions'} do
+    get "users/edit", :to => "registrations#edit", :as => "edit_user"
+    get "users/edit_password", :to => "registrations#edit_password", :as => "edit_password_user"
+    get "users/edit_avatar", :to => "registrations#edit_avatar", :as => "edit_avatar_user"
+    put "users/update_password", :to => "registrations#update_password", :as => "update_password_user"
+    put "users/update_avatar", :to => "registrations#update_avatar", :as => "update_avatar_user"
+    put "users/update", :to => "registrations#update", :as => "update_user"
+  end
 
   devise_scope :user do
     match 'users/sign_out' => 'devise/sessions#destroy'
+    # match 'edit_password' => 'registrations#edit_password'
+    # match 'edit_avatar' => 'registrations#edit_avatar'
+    # match '/login' => 'devise/sessions#new'
   end
 
   match ':id/home' => 'users#home'
@@ -11,14 +22,14 @@ Liuxue::Application.routes.draw do
     resources :schools
   end
 
-  resource :users do
-    member do
-      get :edit_password
-      put :update_password
-      get :edit_avatar
-      get :update_avatar
-    end
-  end
+  # resource :users do
+  #   member do
+  #     get :edit_password
+  #     put :update_password
+  #     get :edit_avatar
+  #     put :update_avatar
+  #   end
+  # end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
