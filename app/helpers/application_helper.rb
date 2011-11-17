@@ -12,7 +12,7 @@ module ApplicationHelper
 
   def menus_account
       [{:title => t("tabs.user_infor"), :href => edit_user_path},
-      {:title => t("tabs.account_infor"), :href => ""},
+      {:title => t("tabs.account_infor"), :href => account_path},
       {:title => t("tabs.modify_password"), :href => edit_password_user_path},
       {:title => t("tabs.modify_avatar"), :href => edit_avatar_user_path}]
   end

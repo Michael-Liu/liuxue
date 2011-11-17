@@ -4,6 +4,7 @@
     :tabs => [{:active => false, :a => menus_account[0]},
               {:active => true, :a => menus_other[0]}]} %>
 
+<div class="sub-body-left">
   <%= form_for(resource, :as => resource_name, :url => update_teacher_path, :html => { :method => :put }) do |f| %>
     <%= devise_error_messages! %>
     <div class="tr">
@@ -24,6 +25,25 @@
       <%= submit_tag t("buttons.save"), :class => "btn btn-submit" %>
     </div>
   <% end %>
+</div>
+<div class="box-tip-wrap">
+  <div class="box-tip">
+    <p>
+      <span class="title">
+        <%= User.human_attribute_name(:request_school_expense) %>
+      </span>
+      <%= t("help.request_school_expense") %>
+      <span class="title">
+        <%= User.human_attribute_name(:request_visa_expense) %>
+      </span>
+      <%= t("help.request_visa_expense") %>
+      <span class="title">
+      <%= t("help.request_school_visa_expense") %>
+      </span>
+
+    </p>
+  </div>
+</div>
 <% end %>
 <% content_for :body_right do %>
   <%= render :partial => "partials/home_menu", 

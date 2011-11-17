@@ -12,6 +12,12 @@ zh-CN:
     gmat: "是Graduate Management Admission Test的缩写，中文名称为经企管理研究生入学考试。它是一种标准化考试，目前已经被广泛地用做工商管理硕士的入学考试，是当前最为可靠的测试考生是否具备顺利完成工商管理硕士项目学习能力的考试项目，专门帮助各商学院或工商管理硕士项目评估申请人是否具备在工商管理方面继续深造学习的资格。"
     toefl: "（The Test of English as a Foreign Language，简称TOEFL）是由美国教育测验服务社（ETS）举办的英语能力考试，全名为“检定非英语为母语者的英语能力考试”，中文音译为“托福”。"
     ielts: "雅思（International English Language Testing System，简称IELTS，中文名为国际英语语言测试系统）是由英国文化协会（The British Council，即英国驻华大使馆/总领事馆文化教育处）、剑桥大学考试委员会（CESOL）和澳大利亚教育国际开发署（IDP Australia）共同举办的国际英语水平测试。此项考试是为申请赴英语国家（美国、英国、澳大利亚、加拿大、新西兰等）留学、移民的非英语国家学生而设，用来评定考生运用英语的能力。"
+    total_amount: "账户中实际存在的总金额"
+    freeze_amount: "帐号中实际存在但是不可进行交易的金额"
+    available_amount: "帐号中实际存在并且可进行交易的金额"
+    request_visa_expense: "为学生申请相应的学校应收取的服务费"
+    request_school_expense: "为学生申请留学签证应收取的服务费"
+    request_school_visa_expense: "如果你两者都可以做，那么就全部填上相应的服务费数额；如果只会其一，那么填写你所擅长的就可以。"
   buttons:
     sign_in: "登录"
     sign_up: "注册"
@@ -199,6 +205,10 @@ zh-CN:
         expense: "服务费"
         request_school_expense: "申请学校服务费"
         request_visa_expense: "申请签证服务费"
+      account:
+        total_amount: "帐号余额"
+        available_amount: "可用余额"
+        freeze_amount: "冻结余额"
       school:
         name: "学校名称"
         description: "简介"

@@ -24,6 +24,8 @@ Liuxue::Application.routes.draw do
     resources :schools
   end
 
+  resource :account
+
   # resource :users do
   #   member do
   #     get :edit_password

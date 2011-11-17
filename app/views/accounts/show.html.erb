@@ -1,0 +1,54 @@
+<% content_for :body_left do %>
+  <% 
+    t_total_amount = Account.human_attribute_name(:total_amount)
+    t_freeze_amount = Account.human_attribute_name(:freeze_amount)
+    t_available_amount = Account.human_attribute_name(:available_amount)
+  %>
+  <%= render :partial => "partials/tab_1", 
+    :locals => { 
+    :tabs => [{:active => true, :a => menus_account[1]}]} %>
+  <div class="sub-body-left">
+    <div class="tr">
+      <%= label_tag :total_amount, t_total_amount, :class => "field" %>
+      <span class="field_show">
+        <%= @account.total_amount %>
+        <%= t("number.currency.format.unit") %>
+      </span>
+    </div>
+    <div class="tr">
+      <%= label_tag :freeze_amount, t_freeze_amount, :class => "field" %>
+      <span class="field_show f-freeze">
+        <%= @account.freeze_amount %>
+        <%= t("number.currency.format.unit") %>
+      </span>
+    </div>
+    <div class="tr">
+      <%= label_tag :available_amount, t_available_amount, :class => "field" %>
+      <span class="field_show f-available">
+        <%= @account.available_amount %>
+        <%= t("number.currency.format.unit") %>
+      </span>
+    </div>
+  </div>
+
+  <div class="box-tip-wrap">
+    <div class="box-tip">
+      <p>
+        <span class="title"><%= t_total_amount %></span>
+        <%= t("help.total_amount") %>
+        <span class="title"><%= t_freeze_amount %></span>
+        <%= t("help.freeze_amount") %>
+        <span class="title"><%= t_available_amount %></span>
+        <%= t("help.available_amount") %>
+
+        <span class="title">
+          <%= t_total_amount %> = <%= t_freeze_amount %> + <%= t_available_amount %>
+        </span>
+      </p>
+    </div>
+  </div>
+<% end %>
+<% content_for :body_right do %>
+  <%= render :partial => "partials/home_menu", 
+    :locals => {:current_href => menus_account[1][:href]} %>
+<% end %>

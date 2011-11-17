@@ -179,6 +179,17 @@ label{
   float: right;
   width: 280px;
 }
+.sub-body-left{
+  float: left;
+  width: 500px;
+}
+.box-tip-wrap{
+  float: right;
+  width: 300px;
+}
+.box-tip-wrap .box-tip {
+  margin-top: 0;
+}
 .box-tip{
   margin-top: 15px;
   padding: 5px;
@@ -189,10 +200,9 @@ label{
   border-radius: 4px;
   color: #666;
 }
-.box-tip a{
+.box-tip .title, .box-tip a{
   color: darkOrange;
-  font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
 }
 .box-tip h2{
   padding: 5px 10px;
@@ -203,7 +213,7 @@ label{
 
 /************* div tr ******************/
 div.tr{
-  margin: 10px 0;
+  margin: 8px 0;
   position: relative;
 }
 div.tr .field{
@@ -214,9 +224,25 @@ div.tr .field{
   padding-top: 5px;
   padding-bottom: 5px;
 }
+div.tr .field_show{
+  display: inline-block;
+  width: 200px;
+  text-align: left;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
 div.tr-btn{
   margin: 10px 0;
   padding-left: 100px;
+}
+
+.f-freeze{
+  color: #F7B11A;
+}
+.f-available{
+  color: #1F85D2;
 }
 
 /****************************/
