@@ -1,7 +1,6 @@
 <% content_for :body_left do %>
   <%= render :partial => "partials/tab_1", 
-    :locals => { 
-    :tabs => [:active => true, :a => menus_account[0]]} %>
+    :locals => {:tabs => user_information_tabs(current_user)} %>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
     <%= devise_error_messages! %>
 
@@ -25,10 +24,6 @@
       <%= f.label :address, :class => "field" %>
       <%= f.select :province_id, Province.cache.collect {|p| [p.name, p.id]} %>
       <%= f.text_field :address %>
-    </div>
-    <div class="tr">
-      <%= f.label :about, :class => "field" %>
-      <%= f.text_area :about %>
     </div>
 
     <div class="tr-btn">

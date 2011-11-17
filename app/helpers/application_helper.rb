@@ -17,6 +17,10 @@ module ApplicationHelper
       {:title => t("tabs.modify_avatar"), :href => edit_avatar_user_path}]
   end
 
+  def menus_other
+    [{:title => t("tabs.teacher_infor"), :href => edit_teacher_path}]
+  end
+
   def menus_order
     [{:title => t("tabs.user_order"), :href => ""}]
   end
@@ -24,6 +28,15 @@ module ApplicationHelper
   # my menus
   def menus
     {t("tabs.account_center") => menus_account, t("tabs.order_center") => menus_order}
+  end
+
+  # user information if student or teacher
+  def user_information_tabs(user)
+    r = [{:active => true, :a => menus_account[0]}]
+    if user.instance_of? Teacher
+      r << {:active => false, :a => menus_other[0]}
+    end
+    r
   end
 
 end

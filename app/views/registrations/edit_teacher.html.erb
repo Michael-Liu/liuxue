@@ -1,0 +1,31 @@
+<% content_for :body_left do %>
+  <%= render :partial => "partials/tab_1", 
+    :locals => { 
+    :tabs => [{:active => false, :a => menus_account[0]},
+              {:active => true, :a => menus_other[0]}]} %>
+
+  <%= form_for(resource, :as => resource_name, :url => update_teacher_path, :html => { :method => :put }) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="tr">
+      <%= f.label :request_school_expense, :class => "field" %>
+      <%= f.text_field :request_school_expense %>
+      <%= t("number.currency.format.unit") %>
+    </div>
+    <div class="tr">
+      <%= f.label :request_visa_expense, :class => "field" %>
+      <%= f.text_field :request_visa_expense %>
+      <%= t("number.currency.format.unit") %>
+    </div>
+    <div class="tr">
+      <%= f.label :about, :class => "field" %>
+      <%= f.text_area :about %>
+    </div>
+    <div class="tr-btn">
+      <%= submit_tag t("buttons.save"), :class => "btn btn-submit" %>
+    </div>
+  <% end %>
+<% end %>
+<% content_for :body_right do %>
+  <%= render :partial => "partials/home_menu", 
+    :locals => {:current_href => menus_account[0][:href]} %>
+<% end %>

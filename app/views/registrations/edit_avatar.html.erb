@@ -1,7 +1,7 @@
 <% content_for :body_left do %>
   <%= render :partial => "partials/tab_1", 
     :locals => { 
-    :tabs => [:active => true, :a => menus_account[3]]} %>
+    :tabs => [{:active => true, :a => menus_account[3]}]} %>
 
   <div class='curr-picture'> 
     <h4><%= t("picture.curr") %></h4> 

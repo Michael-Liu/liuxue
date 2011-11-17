@@ -4,9 +4,11 @@ Liuxue::Application.routes.draw do
     get "users/edit", :to => "registrations#edit", :as => "edit_user"
     get "users/edit_password", :to => "registrations#edit_password", :as => "edit_password_user"
     get "users/edit_avatar", :to => "registrations#edit_avatar", :as => "edit_avatar_user"
+    get "users/edit_teacher", :to => "registrations#edit_teacher", :as => "edit_teacher"
     put "users/update_password", :to => "registrations#update_password", :as => "update_password_user"
     put "users/update_avatar", :to => "registrations#update_avatar", :as => "update_avatar_user"
     put "users/update", :to => "registrations#update", :as => "update_user"
+    put "users/update_teacher", :to => "registrations#update_teacher", :as => "update_teacher"
   end
 
   devise_scope :user do

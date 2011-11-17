@@ -18,12 +18,16 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
     :name, :type, :business, :address, :im, :telephone, :about, :avatar, 
-    :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at
+    :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at,
+    :request_visa_expense, :request_school_expense
 
   validates_presence_of :name
   validates :name, 
     :length => {:maximum => 30},
     :uniqueness => true
+
+  validates :request_school_expense, :request_visa_expense,
+    :format => {:with => /^[1-9]{1}\d{0,4}$/, :allow_blank => true}
 
   before_create do |user|
     user.account = Account.new

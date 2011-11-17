@@ -39,6 +39,7 @@ zh-CN:
     user_order: "我的订单"
     account_center: "账户中心"
     order_center: "订单中心"
+    teacher_infor: "教师专业信息"
   picture:
     curr: "当前头像"
     edit: "更改头像"
@@ -195,6 +196,9 @@ zh-CN:
         telephone: "联系电话"
         im: "QQ MSN"
         about: "关于我们"
+        expense: "服务费"
+        request_school_expense: "申请学校服务费"
+        request_visa_expense: "申请签证服务费"
       school:
         name: "学校名称"
         description: "简介"
