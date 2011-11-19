@@ -1,13 +1,13 @@
 class Major < ActiveRecord::Base
-  class << self
+  # class << self
 
-    def kv
-      cache.collect {|c| [c.name, c.id] }
-    end
+    # def kv
+    #   cache.collect {|c| [c.name, c.id] }
+    # end
 
-    def cache
-      $_app_cache.get_object "majors", self
-    end
+    # def cache
+    #   $_app_cache.get_object "majors", self
+    # end
 
-  end
+  # end
 end

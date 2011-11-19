@@ -7,7 +7,7 @@ class SchoolsController < ApplicationController
     @school.country_id = params[:country_id]
 
     # 
-    sql = "country_id = :country_id"
+    sql = "country_id = :country_id and rank > 0 "
     @school.gre.blank? || sql << " and gre <= :gre"
     @school.gpa.blank? || sql << " and gpa <= :gpa"
     @school.gmat.blank? || sql << " and gmat <= :gmat"
@@ -17,6 +17,6 @@ class SchoolsController < ApplicationController
     params[:school] ||= {}
     params[:school][:country_id] = params[:country_id]
 
-    @schools = School.where(sql, params[:school]).page(params[:page])
+    @schools = School.where(sql, params[:school]).order("rank").page(params[:page])
   end
 end

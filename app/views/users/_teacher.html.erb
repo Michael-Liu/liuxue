@@ -1,0 +1,21 @@
+<div class="box-item box-item-user">
+  <div class="box-l">
+    <div class="pt">
+      <img src="<%= teacher.avatar.url %>"/>
+    </div>
+  </div>
+  <div class="box-r">
+    <div class="rank" teacher_id="<%= teacher.id %>">
+      <%= teacher.send "#{request_expense}" %>
+      <%= t("number.currency.format.unit") %>
+    </div>
+    <div class="title">
+      <%= link_to teacher.name, "", :target => "_blank" %>
+      <span><%= teacher.address_show %></span>
+    </div>
+    <div class="text">
+      <%= teacher.about %>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>

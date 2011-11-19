@@ -506,6 +506,9 @@ ul.tabs-1 li.active a {
 .box-item .box-r{
   margin-left: 150px;
 }
+.box-item-user .box-r{
+  margin-left: 100px;
+}
 .box-item .box-l .pt{
   /** border: 1px solid #999; **/
   overflow: hidden;
@@ -519,6 +522,10 @@ ul.tabs-1 li.active a {
 .box-item .box-l img, .box-item .box-l .pt{
   width: 130px;
   height: 78px;
+}
+.box-item-user .box-l img, .box-item-user .box-l .pt{
+  width: 80px;
+  height: 80px;
 }
 .box-item .box-r .rank{
   float: left;

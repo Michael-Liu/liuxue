@@ -1,8 +1,8 @@
 module ApplicationHelper
   def tabs(country_code)
     [{:title => "select_school", :href => country_schools_path(country_code)},
-    {:title => "request_school", :href => ""},
-    {:title => "request_visa", :href => ""}]
+    {:title => "request_school", :href => request_school_country_users_path(country_code)},
+    {:title => "request_visa", :href => request_visa_country_users_path(country_code)}]
   end
 
   def page(p)

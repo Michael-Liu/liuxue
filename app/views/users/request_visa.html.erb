@@ -1,0 +1,15 @@
+<%= render :partial => "/partials/header_tab", 
+  :locals => {:tab_name => "request_visa"} %>
+
+<div class="body-left">
+  <%= render :partial => "/users/teacher", :collection => @teachers,
+    :locals => {:request_expense => "request_visa_expense"}%>
+</div>
+
+<div class="body-right">
+  <div class="box-tip">
+  </div>
+</div>
+<div class="clearfix"></div>
+
+<%= page @teachers %>

@@ -1,6 +1,5 @@
 Liuxue::Application.routes.draw do
-  devise_for :users,
-    :controllers => {:registrations => 'registrations', :sessions => 'sessions'} do
+  devise_for :users, :controllers => {:registrations => 'registrations', :sessions => 'sessions'} do
     get "users/edit", :to => "registrations#edit", :as => "edit_user"
     get "users/edit_password", :to => "registrations#edit_password", :as => "edit_password_user"
     get "users/edit_avatar", :to => "registrations#edit_avatar", :as => "edit_avatar_user"
@@ -22,6 +21,12 @@ Liuxue::Application.routes.draw do
 
   resources :countries do
     resources :schools
+    resources :users do
+      collection do
+        get :request_school
+        get :request_visa
+      end
+    end
   end
 
   resource :account

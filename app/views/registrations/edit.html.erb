@@ -22,7 +22,7 @@
     </div>
     <div class="tr">
       <%= f.label :address, :class => "field" %>
-      <%= f.select :province_id, Province.cache.collect {|p| [p.name, p.id]} %>
+      <%= f.select :province_id, Province.cache_list.collect {|p| [p.name, p.id]} %>
       <%= f.text_field :address %>
     </div>
 
