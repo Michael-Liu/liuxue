@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111117051617) do
+ActiveRecord::Schema.define(:version => 20111120104752) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "user_id"
@@ -28,10 +28,28 @@ ActiveRecord::Schema.define(:version => 20111117051617) do
     t.string "currency", :limit => 10
   end
 
+  create_table "countries_teachers", :id => false, :force => true do |t|
+    t.integer "teacher_id"
+    t.string  "country_id"
+  end
+
   create_table "majors", :id => false, :force => true do |t|
     t.string "id",   :limit => 50
     t.string "code", :limit => 50
     t.string "name", :limit => 50
+  end
+
+  create_table "orders", :id => false, :force => true do |t|
+    t.string   "id"
+    t.integer  "teacher_id"
+    t.integer  "student_id"
+    t.integer  "price",       :default => 0
+    t.integer  "num",         :default => 1
+    t.integer  "status"
+    t.datetime "pay_time"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "provinces", :force => true do |t|
@@ -69,12 +87,12 @@ ActiveRecord::Schema.define(:version => 20111117051617) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                 :default => "", :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
+    t.string   "email",                                  :default => "", :null => false
+    t.string   "encrypted_password",      :limit => 128, :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                         :default => 0
+    t.integer  "sign_in_count",                          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -83,11 +101,11 @@ ActiveRecord::Schema.define(:version => 20111117051617) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "type"
-    t.string   "address",                :limit => 50
-    t.string   "im",                     :limit => 50
-    t.string   "telephone",              :limit => 20
-    t.string   "about",                  :limit => 500
-    t.string   "business",               :limit => 20
+    t.string   "address",                 :limit => 50
+    t.string   "im",                      :limit => 50
+    t.string   "telephone",               :limit => 20
+    t.string   "about",                   :limit => 500
+    t.string   "business",                :limit => 20
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -95,6 +113,8 @@ ActiveRecord::Schema.define(:version => 20111117051617) do
     t.integer  "province_id"
     t.integer  "request_school_expense"
     t.integer  "request_visa_expense"
+    t.integer  "orders_count",                           :default => 0
+    t.integer  "successful_orders_count",                :default => 0
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

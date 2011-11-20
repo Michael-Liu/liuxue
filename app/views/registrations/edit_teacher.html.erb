@@ -18,6 +18,14 @@
       <%= t("number.currency.format.unit") %>
     </div>
     <div class="tr">
+      <%= f.label :countries, :class => "field" %>
+      <% Country.cache_list.each do |country| %>
+        <input type="checkbox" name="countries[]" value="<%= country.id %>"
+        <%= resource.country_ids.include?(country.id) && "checked" %>/>
+        <%= country.name %>
+      <% end %>
+    </div>
+    <div class="tr">
       <%= f.label :about, :class => "field" %>
       <%= f.text_area :about %>
     </div>

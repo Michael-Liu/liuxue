@@ -213,8 +213,10 @@ label{
 
 /************* div tr ******************/
 div.tr{
-  margin: 8px 0;
-  position: relative;
+  margin: 5px 0;
+  /** position: relative; **/
+  float: left;
+  clear: both;
 }
 div.tr .field{
   float: left;
@@ -234,6 +236,7 @@ div.tr .field_show{
   font-weight: bold;
 }
 div.tr-btn{
+  clear: both;
   margin: 10px 0;
   padding-left: 100px;
 }

@@ -1,7 +1,7 @@
 class RegistrationsController < ::Devise::RegistrationsController
 
   before_filter :auth, :except => [:new, :create]
-  before_filter :init_resource, :only => [:edit_password, :edit_avatar, :edit_teacher]
+  before_filter :init_resource
   layout :set_layout
 
   def edit_password; end
@@ -26,14 +26,19 @@ class RegistrationsController < ::Devise::RegistrationsController
   # teacher information
   def edit_teacher; end
   def update_teacher
+    resource.countries = if params[:countries]
+      Country.find(params[:countries])
+    else
+      []
+    end
     update_user
     render "edit_teacher"
   end
-  
+
   protected
   def update_pwd
     # self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
-    init_resource
+    # init_resource
 
     if resource.update_with_password(params[resource_name])
       # set_flash_message :notice, :updated if is_navigational_format?
@@ -47,8 +52,8 @@ class RegistrationsController < ::Devise::RegistrationsController
   end
 
   def update_user
-    init_resource
-    if resource.update_attributes(params[:user])
+    # init_resource
+    if resource.update_attributes(params[resource_name])
       set_flash_notice_success
     end
     # self.resource = current_user

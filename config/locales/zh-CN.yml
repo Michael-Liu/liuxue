@@ -205,6 +205,7 @@ zh-CN:
         expense: "服务费"
         request_school_expense: "申请学校服务费"
         request_visa_expense: "申请签证服务费"
+        countries: "留学国家"
       account:
         total_amount: "帐号余额"
         available_amount: "可用余额"

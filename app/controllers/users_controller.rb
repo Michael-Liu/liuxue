@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :only => [:home]
   layout :set_layout
 
   # users#home
@@ -8,14 +8,19 @@ class UsersController < ApplicationController
   end
 
   def request_school
-    @teachers = Teacher.where("request_school_expense is not null").page(params[:page])
+    request_school_visa("school")
   end
 
   def request_visa
-    @teachers = Teacher.where("request_visa_expense is not null").page(params[:page])
+    request_school_visa("visa")
   end
 
   private
+  def request_school_visa(school_or_visa)
+    @teachers = Teacher.joins("inner join countries_teachers ct").
+      where("request_#{school_or_visa}_expense is not null and ct.country_id = :country_id ", params).
+      page(params[:page])
+  end
   def set_layout
     if ["home"].include?(params[:action])
       "bg"

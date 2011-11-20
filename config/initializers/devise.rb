@@ -213,7 +213,6 @@ end
 # rewrite devise_error_messsages
 module DeviseHelper
   def devise_error_messages!
-    puts ":::#{resource.errors.full_messages}"
     if !resource.nil? && !resource.errors.empty?
 
       messages = 

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   has_one :account
+
   # belongs_to :province
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -21,15 +22,12 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me,
     :name, :type, :business, :address, :im, :telephone, :about, :avatar, 
     :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at,
-    :request_visa_expense, :request_school_expense, :province_id
+    :request_visa_expense, :request_school_expense, :province_id, :countries
 
   validates_presence_of :name
   validates :name, 
     :length => {:maximum => 30},
     :uniqueness => true
-
-  validates :request_school_expense, :request_visa_expense,
-    :format => {:with => /^[1-9]{1}\d{0,4}$/, :allow_blank => true}
 
   before_create do |user|
     user.account = Account.new
