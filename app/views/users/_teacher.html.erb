@@ -5,7 +5,10 @@
     </div>
   </div>
   <div class="box-r">
-    <div class="rank" teacher_id="<%= teacher.id %>">
+    <div class="order-rate">
+      <%= "#{teacher.successful_orders_count}/#{teacher.orders_count}" %>
+    </div>
+    <div class="expense">
       <%= teacher.send "#{request_expense}" %>
       <%= t("number.currency.format.unit") %>
     </div>

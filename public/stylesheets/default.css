@@ -192,7 +192,7 @@ label{
 }
 .box-tip{
   margin-top: 15px;
-  padding: 5px;
+  padding: 10px;
   background: #FFFFCA;
   border: 1px solid #F7B11A;
   -webkit-border-radius: 4px;
@@ -530,7 +530,7 @@ ul.tabs-1 li.active a {
   width: 80px;
   height: 80px;
 }
-.box-item .box-r .rank{
+.box-item .box-r .rank, .box-item .box-r .order-rate, .box-item .box-r .expense{
   float: left;
   margin-right: 10px;
   background-color: #f7b11a;
@@ -541,6 +541,12 @@ ul.tabs-1 li.active a {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   cursor: pointer;
+}
+.box-item .box-r .order-rate{
+  background-color: #668512;
+}
+.box-item .box-r .expense{
+  background-color: #D87F00;
 }
 .box-item .box-r .rank.active{
   background: darkOrange;
