@@ -542,12 +542,21 @@ ul.tabs-1 li.active a {
   border-radius: 4px;
   cursor: pointer;
 }
-.box-item .box-r .order-rate{
+.box-item .box-r .order-rate, .box-tip .order-rate{
   background-color: #668512;
 }
-.box-item .box-r .expense{
+.box-item .box-r .expense, .box-tip .expense{
   background-color: #D87F00;
 }
+
+.box-tip .order-rate, .box-tip .expense {
+  width: 20px;
+  height: 20px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
 .box-item .box-r .rank.active{
   background: darkOrange;
 }
@@ -557,6 +566,9 @@ ul.tabs-1 li.active a {
   color: #0072B2;
   font-weight: bold;
   font-size: 15px;
+}
+.box-item .box-r .title a:hover {
+  text-decoration: underline;
 }
 .box-item .box-r .title span{
   color: #777;

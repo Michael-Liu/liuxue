@@ -18,6 +18,7 @@ zh-CN:
     request_visa_expense: "为学生申请相应的学校应收取的服务费"
     request_school_expense: "为学生申请留学签证应收取的服务费"
     request_school_visa_expense: "如果你两者都可以做，那么就全部填上相应的服务费数额；如果只会其一，那么填写你所擅长的就可以。"
+    order_rate: "表示订单的成功比率（成功订单/总订单）"
   buttons:
     sign_in: "登录"
     sign_up: "注册"

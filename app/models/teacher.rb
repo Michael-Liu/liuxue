@@ -17,4 +17,12 @@ class Teacher < User
       self.country_ids.split(',')
     end
   end
+
+  class << self
+    def request_school_visa(school_or_visa, params)
+      self.joins("inner join countries_teachers ct").
+      where("request_#{school_or_visa}_expense is not null and ct.country_id = :country_id ", params).
+      page(params[:page])
+    end
+  end
 end
