@@ -17,7 +17,8 @@ Liuxue::Application.routes.draw do
     # match '/login' => 'devise/sessions#new'
   end
 
-  match ':id/home' => 'users#home'
+  match '/home' => 'users#home'
+  match '/:id/home' => 'users#show'
 
   resources :countries do
     resources :schools

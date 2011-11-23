@@ -8,7 +8,7 @@
 
     <% if user_signed_in? %>
       <li class="r <%= "#{tab_name == 'settings' ? 'active' : ''}" %>">
-        <a href='<%= "/#{current_user.id}/home?cc=#{@cc}" %>'>
+        <a href='<%= "/home?cc=#{@cc}" %>'>
           <%= t("buttons.settings") %><span class="settings"></span>
         </a>
       </li>

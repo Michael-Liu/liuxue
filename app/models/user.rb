@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
   has_one :account
+  has_many :from_comments, :class_name => "Comment", :foreign_key => "from_user_id"
+  has_many :to_comments, :class_name => "Comment", :foreign_key => "to_user_id"
 
   # belongs_to :province
   # Include default devise modules. Others available are:

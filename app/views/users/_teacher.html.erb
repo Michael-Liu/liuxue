@@ -12,8 +12,9 @@
       <%= teacher.send "#{request_expense}" %>
       <%= t("number.currency.format.unit") %>
     </div>
-    <div class="title">
-      <%= link_to teacher.name, "", :target => "_blank" %>
+    <div class="member">
+      <%= link_to teacher.name, "/#{teacher.id}/home", 
+        :target => "_self" %>
       <span><%= teacher.address_show %></span>
     </div>
     <div class="text">

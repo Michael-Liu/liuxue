@@ -7,6 +7,11 @@ class UsersController < ApplicationController
   def home
   end
 
+  # users#show
+  def show
+    @teacher = User.find(params[:id])
+  end
+
   def request_school
     @teachers = Teacher.request_school_visa("school", params)
   end

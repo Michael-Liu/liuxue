@@ -1,0 +1,19 @@
+<!--%= user = comment.user %-->
+<div class="box-item box-item-comment">
+  <div class="box-l">
+    <div class="pt">
+      <img src="a.png"/>
+    </div>
+  </div>
+  <div class="box-r">
+      <a href="">myliang</a>
+      <!--%= link_to user.name, "/#{user.id}/home", :target => "_self" %-->
+    <div class="text">
+      评论的抓哟内容是
+    </div>
+    <div class="time">
+      <%= time_ago_in_words Time.new %>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>

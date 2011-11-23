@@ -3,7 +3,8 @@ class Teacher < User
   has_and_belongs_to_many :countries
 
   validates_numericality_of :request_school_expense, :request_visa_expense,
-    :only_integer => true
+    :only_integer => true,
+    :allow_blank => true
 
   validates_each :countries do |record, attr, value|
     record.errors.add(attr, I18n.t("errors.messages.empty")) if value.empty?

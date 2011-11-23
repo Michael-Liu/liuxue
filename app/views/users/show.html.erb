@@ -1,0 +1,76 @@
+<%= render :partial => "/partials/header_tab", 
+  :locals => {:tab_name => ""} %>
+
+<div class="body-left w-480">
+  <div class="box">
+    <div class="order-rate">
+      <%= "#{@teacher.successful_orders_count}/#{@teacher.orders_count}" %>
+    </div>
+    <div class="expense">
+      <%= @teacher.send "request_school_expense" %>
+      <%= t("number.currency.format.unit") %>
+    </div>
+    <div class="clearfix"></div>
+    <div class="about">
+      <h3><%= User.human_attribute_name(:about) %></h3>
+      <%= @teacher.about %>
+    </div>
+    <div class="comment">
+      <h3><%= Comment.human_attribute_name(:news) %></h3>
+      <%= render :partial => "comments/comment" %>
+    </div>
+  </div>
+</div>
+<div class="body-right w-480">
+  <div class="box-item box-item-teacher">
+    <div class="box-l">
+      <div class="pt">
+        <img src="<%= @teacher.avatar.url %>"/>
+      </div>
+    </div>
+    <div class="box-r">
+      <div class="member">
+        <%= link_to "#{@teacher.name}", "/#{@teacher.id}/home", :target => "_self" %>
+        <div class="contact">
+          <div class="im">
+            <div class="key"><%= User.human_attribute_name(:im) %></div>
+            <%= @teacher.im %>
+          </div>
+          <div class="tel">
+            <div class="key"><%= User.human_attribute_name(:telephone) %></div>
+            <%= @teacher.telephone %>
+          </div>
+        </div>
+        <span><%= @teacher.address_show %></span>
+      </div>
+    </div>
+    <dl>
+      <dt><%= Comment.human_attribute_name(:attitude) %></dt>
+      <dd><div class="vote">7.5</div></dd>
+    </dl>
+    <dl>
+      <dt><%= Comment.human_attribute_name(:efficiency) %></dt>
+      <dd><div class="vote">8.5</div></dd>
+    </dl>
+    <dl>
+      <dt><%= User.human_attribute_name(:request_business) %></dt>
+      <dd>
+        <%= request_business(@teacher) %>
+      </dd>
+    </dl>
+    <dl>
+      <dt><%= User.human_attribute_name(:countries) %></dt>
+      <dd>
+        <% Country.cache_list.each do |country| %>
+          <% if @teacher.country_ids.include? country.id %>
+            <%= link_to country.name, "" %>
+          <% end %>
+        <% end %>
+      </dd>
+    </dl>
+    <div class="text-area">
+      <textarea name=""><%= t("help.say_a_word") %></textarea>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

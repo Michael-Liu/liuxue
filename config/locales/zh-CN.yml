@@ -19,6 +19,7 @@ zh-CN:
     request_school_expense: "为学生申请留学签证应收取的服务费"
     request_school_visa_expense: "如果你两者都可以做，那么就全部填上相应的服务费数额；如果只会其一，那么填写你所擅长的就可以。"
     order_rate: "表示订单的成功比率（成功订单/总订单）"
+    say_a_word: "说一句..."
   buttons:
     sign_in: "登录"
     sign_up: "注册"
@@ -201,9 +202,10 @@ zh-CN:
         type_teacher: "老师"
         address: "详细地址"
         telephone: "联系电话"
-        im: "QQ MSN"
+        im: "QQ"
         about: "关于我们"
         expense: "服务费"
+        request_business: "可办申请"
         request_school_expense: "申请学校服务费"
         request_visa_expense: "申请签证服务费"
         countries: "留学国家"
@@ -227,6 +229,10 @@ zh-CN:
         type_university: "大学"
       country:
         name: "名字"
+      comment: 
+        news: "最新评论"
+        attitude: "服务态度"
+        efficiency: "服务效率"
     errors:
       template: # ~ 2.3.5 backward compatible
         header:

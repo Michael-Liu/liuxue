@@ -211,6 +211,40 @@ label{
   text-decoration: underline;
 }
 
+dl{
+  overflow: hidden;
+  zoom: 1;
+  height: 30px;
+  line-height: 30px;
+}
+dl dt{
+  color: #777;
+}
+dl dd a{
+  color: #0072B2;
+  font-weight: bold;
+  float: left;
+  margin-left: 10px;
+}
+dl dd a:hover {
+  color: #0072B2;
+  text-decoration: underline; 
+}
+dl dt, dl dd{
+  float: left;
+}
+.vote{
+  background-color: #749600;
+  background-image: -webkit-linear-gradient(left,#FFF,#FFD700);
+  border-radius: 2px;
+  width: 200px;
+  height: 25px;
+  margin-top: 2px;
+  text-align: right;
+  color: #fff;
+  padding: 0 5px;
+  font-weight: bold;
+}
 /************* div tr ******************/
 div.tr{
   margin: 5px 0;
@@ -228,12 +262,15 @@ div.tr .field{
 }
 div.tr .field_show{
   display: inline-block;
-  width: 200px;
   text-align: left;
   padding-right: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
   font-weight: bold;
+}
+div.tr .field_show a{
+  float: left;
+  padding: 0 5px;
 }
 div.tr-btn{
   clear: both;
@@ -495,22 +532,67 @@ ul.tabs-1 li.active a {
   padding: 10px;
   padding-bottom: 0;
 }
+.text-area{
+  margin: 10px 0;
+  text-align: left;
+  position: relative;
+}
+.text-area textarea{
+  height: 30px;
+  font-size: 12px;
+  color: #999;
+}
 
 /** box-item school ***/
+.box{
+  padding: 10px 0;
+  margin: 5px 0;
+  position: relative;
+}
 .box-item{
   padding: 10px 10px 10px 10px;
   margin: 5px 0;
   position: relative;
   border-bottom: 1px solid #E5E5E5;
 }
+.box-item-teacher{
+  border: none;
+}
+.box-item-comment{
+  padding: 10px 0;
+}
 .box-item .box-l{
   float: left;
+}
+.box-item-teacher .member{
+  line-height: 24px;
+}
+.member .contact{
+  zoom: 1;
+  overflow: hidden;
+}
+.contact .im, .contact .tel{
+  margin-right: 10px;
+  float: left;
+  color: #44751D;
+  font-weight: bold;
+}
+.contact .im .key, .contact .tel .key{
+  float: left;
+  color: #999;
+  margin-right: 2px;
 }
 .box-item .box-r{
   margin-left: 150px;
 }
 .box-item-user .box-r{
   margin-left: 100px;
+}
+.box-item-teacher .box-r{
+  margin-left: 80px;
+}
+.box-item-comment .box-r{
+  margin-left: 50px;
 }
 .box-item .box-l .pt{
   /** border: 1px solid #999; **/
@@ -530,7 +612,15 @@ ul.tabs-1 li.active a {
   width: 80px;
   height: 80px;
 }
-.box-item .box-r .rank, .box-item .box-r .order-rate, .box-item .box-r .expense{
+.box-item-teacher .box-l img, .box-item-teacher .box-l .pt{
+  width: 70px;
+  height: 70px;
+}
+.box-item-comment .box-l img, .box-item-comment .box-l .pt{
+  width: 40px;
+  height: 40px;
+}
+.box-item .box-r .rank, .order-rate, .expense{
   float: left;
   margin-right: 10px;
   background-color: #f7b11a;
@@ -541,17 +631,39 @@ ul.tabs-1 li.active a {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
 }
-.box-item .box-r .order-rate, .box-tip .order-rate{
+.order-rate{
   background-color: #668512;
 }
-.box-item .box-r .expense, .box-tip .expense{
+.expense{
   background-color: #D87F00;
+}
+.about{
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #DCF7DD;
+  border: 1px solid #BBD2BC; 
+  /**background: #E6F1F6;
+  border: 1px solid #C5D5DD;**/
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #626262;
+}
+.about h3, .comment h3{
+  color: #4183C4;
+  padding-bottom: 5px;
+}
+.comment{
+  margin-top 10px;
+  padding: 10px;
 }
 
 .box-tip .order-rate, .box-tip .expense {
-  width: 20px;
-  height: 20px;
+  width: 6px;
+  height: 1px;
+  margin-right: 5px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
@@ -560,28 +672,48 @@ ul.tabs-1 li.active a {
 .box-item .box-r .rank.active{
   background: darkOrange;
 }
-.box-item .box-r .title{
+.box-item .box-r .member{
 }
-.box-item .box-r .title a{
+.box-item .box-r .member a{
   color: #0072B2;
   font-weight: bold;
   font-size: 15px;
 }
-.box-item .box-r .title a:hover {
+.box-item .box-r .member a:hover {
   text-decoration: underline;
 }
-.box-item .box-r .title span{
+.box-item .box-r .member span{
   color: #777;
   font-size: 11px;
 }
+.box-item-teacher .box-r .member span{
+  font-size: 12px;
+}
 .box-item .box-r .text{
   color: #333;
+}
+.box-item-comment .text{
+  font-size: 14px;
+  line-height: 25px;
+}
+.box-item .time{
+  font-size: 11px;
+  color: #999;
 }
 
 .f777{
   color: #777;
 }
 
+.w-500{
+  width: 500px;
+}
+.w-480{
+  width: 480px;
+}
+.w-460{
+  width: 460px;
+}
 .w-150{
   width: 150px;
 }
@@ -593,6 +725,9 @@ ul.tabs-1 li.active a {
 }
 .w-100{
   width: 100px;
+}
+w-70, div.tr .w-70{
+  width: 70px;
 }
 .w100{
   width: 100%;
