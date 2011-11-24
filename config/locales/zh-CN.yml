@@ -20,9 +20,11 @@ zh-CN:
     request_school_visa_expense: "如果你两者都可以做，那么就全部填上相应的服务费数额；如果只会其一，那么填写你所擅长的就可以。"
     order_rate: "表示订单的成功比率（成功订单/总订单）"
     say_a_word: "说一句..."
+    leave_a_message: "留言..."
   buttons:
     sign_in: "登录"
     sign_up: "注册"
+    buy: "购买服务"
     save: "保存"
     exit: "退出"
     upload: "上传"
@@ -36,6 +38,7 @@ zh-CN:
     forgot_your_password: "忘记密码?"
     next: "下一步"
     settings: "设置"
+    send: "发送"
   tabs:
     select_school: "选择学校"
     request_school: "学校申请"

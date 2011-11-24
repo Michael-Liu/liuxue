@@ -30,6 +30,10 @@ Liuxue::Application.routes.draw do
     end
   end
 
+  resources :users do
+    resources :comments, :messages
+  end
+
   resource :account
 
   # resource :users do

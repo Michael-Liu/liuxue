@@ -220,11 +220,14 @@ dl{
 dl dt{
   color: #777;
 }
+dl dd{
+  margin-left: 10px;
+}
 dl dd a{
   color: #0072B2;
   font-weight: bold;
   float: left;
-  margin-left: 10px;
+  margin-right: 10px;
 }
 dl dd a:hover {
   color: #0072B2;
@@ -234,8 +237,9 @@ dl dt, dl dd{
   float: left;
 }
 .vote{
-  background-color: #749600;
+  background-color: #FFD700;
   background-image: -webkit-linear-gradient(left,#FFF,#FFD700);
+  background-image: -moz-linear-gradient(left,#FFF,#FFD700);
   border-radius: 2px;
   width: 200px;
   height: 25px;
@@ -542,6 +546,9 @@ ul.tabs-1 li.active a {
   font-size: 12px;
   color: #999;
 }
+.text-area textarea.edit{
+  height: 90px;
+}
 
 /** box-item school ***/
 .box{
@@ -592,7 +599,18 @@ ul.tabs-1 li.active a {
   margin-left: 80px;
 }
 .box-item-comment .box-r{
-  margin-left: 50px;
+  margin-left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px 0 5px 10px;
+}
+.box-item-comment .bubble{
+  margin-left: 52px;
+  padding: 3px;
+  background: #EEE;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
 }
 .box-item .box-l .pt{
   /** border: 1px solid #999; **/
@@ -633,6 +651,19 @@ ul.tabs-1 li.active a {
   cursor: pointer;
   font-size: 16px;
 }
+.arrow{
+  background: url("/images/layer_arrow.png") no-repeat 0 0;
+  width: 10px;
+  height: 14px;
+  _zoom: 1;
+  position: absolute;
+  overflow: hidden;
+}
+.arrow-left{
+  top: 20px;
+  left: 46px;
+  background-position: 2px -5px;
+}
 .order-rate{
   background-color: #668512;
 }
@@ -653,6 +684,8 @@ ul.tabs-1 li.active a {
 }
 .about h3, .comment h3{
   color: #4183C4;
+}
+.about h3{
   padding-bottom: 5px;
 }
 .comment{
@@ -692,9 +725,12 @@ ul.tabs-1 li.active a {
 .box-item .box-r .text{
   color: #333;
 }
+.box-item-comment{
+  border-bottom: none;
+}
 .box-item-comment .text{
   font-size: 14px;
-  line-height: 25px;
+  line-height: 22px;
 }
 .box-item .time{
   font-size: 11px;
@@ -739,17 +775,105 @@ w-70, div.tr .w-70{
   margin: 5px 0;
 }
 
+
+/*************************** pagination ****************************/
+#pagination {
+  border-bottom: 1px solid #ccc;
+}
+.pagination {
+  padding: 3px; /** margin: 3px; **/
+  text-align: center;
+  font-size: 12px;
+  float: right;
+  line-height: 25px;
+  position: relative;
+  top: -5px;
+}
+
+.pagination a {
+  text-decoration: none; /* no underline */
+  color: #036CB4;
+}
+.pagination a, .pagination span {
+  padding: 5px 8px;
+  margin: 2px 5px;
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  background-color: #fff;
+}
+
+.pagination.top a {
+  border: 1px solid #ccc; /** #EEE; ***/
+  border-bottom: 1px solid #fff;
+}
+
+.pagination.bottom a {
+  border: 1px solid #ccc; /** #EEE; ***/
+  border-top: 1px solid #fff;
+}
+
+.pagination a:hover,
+.pagination a:active {
+  color: #666;
+}
+
+.pagination.top a:hover,
+.pagination.top a:active {
+  border: 1px solid #999;
+  border-bottom: 1px solid #fff;
+}
+
+.pagination.bottom a:hover,
+.pagination.bottom a:active {
+  border: 1px solid #999;
+  border-top: 1px solid #fff;
+}
+
+.pagination .current {
+  /** padding: 5px;
+  margin: 2px; **/
+  font-weight: bold; /** background-color: #036CB4; ***/
+  color: #036cb4;
+}
+
+.pagination.top .current {
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #fff;
+}
+
+.pagination.bottom .current {
+  border: 1px solid #ccc;
+  border-top: 1px solid #fff;
+}
+
+.pagination .disabled {
+  /** padding: 5px;
+  margin: 2px; **/
+  color: #DDD;
+}
+
+.pagination.top .disabled {
+  border: 1px solid #ccc; /** EEE; **/
+  border-bottom: 1px solid #fff;
+}
+
+.pagination.bottom .disabled {
+  border: 1px solid #ccc; /** EEE; **/
+  border-top: 1px solid #fff;
+}
+
+
 /*** button ***********************/
 .btn{
   display: inline-block;
-  min-width: 54px;
   text-align: center;
   color: #555;
   font-size: 13px;
   font-weight: bold;
-  height: 30px;
-  padding: 0 8px;
-  line-height: 30px;
+  /** height: 30px; **/
+  padding: 6px 10px;
+  /** line-height: 30px; **/
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -844,6 +968,7 @@ w-70, div.tr .w-70{
   background-image: -o-linear-gradient(top,#DD4B39,#D14836);
   background-image: linear-gradient(top,#DD4B39,#D14836);
 }
+.btn-buy, .btn-buy:hover, 
 .btn-red:hover {
   border: 1px solid #B0281A;
   color: white;
@@ -860,6 +985,11 @@ w-70, div.tr .w-70{
   -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.btn-buy{
+  font-size: 18px;
+  padding: 8px 12px;
+  color: #fff!important;
 }
 .btn-green{
   border: 1px solid transparent;

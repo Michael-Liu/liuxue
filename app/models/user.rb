@@ -1,8 +1,12 @@
 class User < ActiveRecord::Base
 
   has_one :account
+
   has_many :from_comments, :class_name => "Comment", :foreign_key => "from_user_id"
   has_many :to_comments, :class_name => "Comment", :foreign_key => "to_user_id"
+
+  has_many :from_messages, :class_name => "Message", :foreign_key => "from_user_id"
+  has_many :to_messages, :class_name => "Message", :foreign_key => "to_user_id"
 
   # belongs_to :province
   # Include default devise modules. Others available are:
@@ -37,6 +41,14 @@ class User < ActiveRecord::Base
 
   def address_show
     "#{Province.cache_list.find {|c| c.id == self.province_id}.name}  #{self.address}"
+  end
+
+  def url_middle
+    self.avatar.url(:middle)
+  end
+
+  def url
+    self.avatar.url
   end
 
 end
