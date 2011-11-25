@@ -198,11 +198,11 @@ $.extend(Array.prototype, {
 
       if(this.before()){
         //var loading = this.loading();
-        var url = this.fm.attr('action');
+        var url = this.fm.attr('action') + '.json';
         var method = this.fm.attr('method');
         var params = this.wrap();
         //alert(url + '::' + method + '::' + $.param(params));
-        $m.post(url, params, function(json){
+        $.post(url, params, function(json){
           self.success(json);
         })
         /**$.ajax({
@@ -330,17 +330,53 @@ $.extend(Array.prototype, {
 })(jQuery);
 
 //body load
-$(function(){
+function btn_submit(func){
   $('a.btn-submit').click(function(){
     p = $(this).parent();
-    while(p.attr('tagName').toLowerCase() != 'form')
-      p = p.parent();
-    p.ajax_form({offset: {left: 0, right: 0}, after: function(json){
-      if(json == '1'){
-      }else{
-        alert(json.join(' '))
-      }
-    }})
+    while(p.attr('tagName').toLowerCase() != 'form') p = p.parent();
+    p.ajax_form({after: function(json){
+      func(json);
+      //if(json == 1){
+      //}else{
+      //}
+    }});
     return false;
-  })
-})
+  });
+}
+
+// comment
+var $_comment = {
+  items: function(url, params){
+    var slf = this;
+    $.get(url, params, function(json){
+      if(json[1].length > 0){
+        $('#user_comments').html(slf.item(json[1]));
+        if(params.page == 1)
+          $('#pagination').page({rows: json[0], click_after: function(page, callback){
+            slf.items(url, {page: page.index});
+            callback();
+          }});
+      }
+    });
+  },
+  item: function(items){
+    return items.map(function(ele){
+      return ['<div class="box-item box-item-comment">',
+        '<div class="box-l">',
+          '<div class="pt">',
+            '<img src="', ele.from_user.url_middle, '"/>',
+          '</div>',
+        '</div>',
+        '<div class="bubble">',
+          '<div class="box-r">',
+            '<a href="">', ele.from_user.name, '</a>',
+            '<div class="text">',ele.body, '</div>',
+            '<div class="time">',ele.time_ago, '</div>',
+          '</div>',
+        '</div>',
+        '<div class="arrow arrow-left"></div>',
+        '<div class="clearfix"></div>',
+      '</div>'].join('');
+    }).join('');
+  }
+}

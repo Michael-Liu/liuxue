@@ -547,7 +547,21 @@ ul.tabs-1 li.active a {
   color: #999;
 }
 .text-area textarea.edit{
-  height: 90px;
+  height: 75px;
+}
+.send-success{
+  position: absolute;
+  padding: 5px;
+  float: left;
+  height: 20px;
+  left: 180px;
+  top: 20px;
+
+  color: #F7B11A;
+  background-color: #FFFFCA;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
 }
 
 /** box-item school ***/

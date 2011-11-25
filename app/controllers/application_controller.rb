@@ -31,7 +31,10 @@ class ApplicationController < ActionController::Base
 
   def auth
     unless user_signed_in?
-      redirect_to new_user_session
+      respond_to do |format|
+        format.html { redirect_to new_user_session }
+        format.json { render :json => '-1' }
+      end
     end
   end
 

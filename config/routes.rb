@@ -11,7 +11,9 @@ Liuxue::Application.routes.draw do
   end
 
   devise_scope :user do
-    match 'users/sign_out' => 'devise/sessions#destroy'
+    match 'users/sign_out' => 'sessions#destroy'
+    match 'logout' => 'sessions#destroy'
+    match 'login' => 'sessions#new'
     # match 'edit_password' => 'registrations#edit_password'
     # match 'edit_avatar' => 'registrations#edit_avatar'
     # match '/login' => 'devise/sessions#new'

@@ -1,5 +1,5 @@
 <%= render :partial => "/partials/header_tab", 
-  :locals => {:tab_name => ""} %>
+  :locals => {:tab_name => "request_school"} %>
 <% 
   country_ids = @teacher.country_ids
 %>
@@ -78,6 +78,7 @@
     <div class="text-area">
       <%= form_for :message, :url => user_messages_path(@teacher.id) do |f| %>
         <%= f.text_area :body, :id => "send_message", :value => t("help.leave_a_message") %>
+        <div class="send-success" style="display: none;" id="send_message_success"><%= t("errors.send_message_success") %></div>
         <div class="clearfix"></div>
         <%= link_to t("buttons.send"), 'javascript:void(0);', :class => "btn btn-submit" %>
       <% end %>
@@ -88,53 +89,31 @@
 <script type="text/javascript">
   $(function(){
     var user_id = "<%= @teacher.id %>";
-    $.get('/users/'+user_id+'/comments.json', {page: 1}, function(json){
-      //json = json.to_obj();
-      if(json[1].length > 0){
-        $('#user_comments').html(comments(json[1]));
-        $('#pagination').page({rows: json[0], click_after: function(page, callback){
-          //alert(page.index);
-          handle_comments(page.index, callback);
-        }});    
-      }
-    });
-
+    $_comment.items('/users/'+user_id+'/comments.json', {page: 1});
     //textare focus
     $('#send_message').focus(function(){ 
       this.value = ''; 
       this.className = 'edit';
     });
 
-    function handle_comments(page, callback){
-      $.get('/users/'+user_id+'/comments.json', {page: page}, function(json){
-        //json = json.to_obj();
-        if(json[1].length > 0){
-          $('#user_comments').html(comments(json[1]));
-        }
-        callback();
-      });
-    }
-
-    function comments(json){
-      return json.map(function(ele){
-        return ['<div class="box-item box-item-comment">',
-        '<div class="box-l">',
-          '<div class="pt">',
-            '<img src="', ele.from_user.url_middle, '"/>',
-          '</div>',
-        '</div>',
-        '<div class="bubble">',
-          '<div class="box-r">',
-            '<a href="">', ele.from_user.name, '</a>',
-            '<div class="text">',ele.body, '</div>',
-            '<div class="time">',ele.time_ago, '</div>',
-          '</div>',
-        '</div>',
-        '<div class="arrow arrow-left"></div>',
-        '<div class="clearfix"></div>',
-        '</div>'].join('');
-      }).join('');
-    };
+    //send a message
+    btn_submit(function(json){
+      if(json == -1){
+        window.location = "/login";
+      }else if(json == 1){
+        $('#send_message_success').html('<%= t("errors.send_message_success") %>').show();
+        setTimeout(function(){
+          $('#send_message_success').hide();
+          $('#send_message').removeClass('edit').val('<%= t("help.leave_a_message") %>');
+        }, 1000);
+      }else{
+        $('#send_message_success').html(json.join('')).show();
+        setTimeout(function(){
+          $('#send_message_success').hide();
+        }, 1000);
+      }  
+      //setInterval
+    });
   });
 
 </script>
