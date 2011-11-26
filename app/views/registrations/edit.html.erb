@@ -25,6 +25,10 @@
       <%= f.select :province_id, Province.cache_list.collect {|p| [p.name, p.id]} %>
       <%= f.text_field :address %>
     </div>
+    <div class="tr">
+      <%= f.label :about, :class => "field" %>
+      <%= f.text_area :about %>
+    </div>
 
     <div class="tr-btn">
       <%= submit_tag t("buttons.save"), :class => "btn btn-submit" %>

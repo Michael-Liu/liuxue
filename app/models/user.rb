@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
 
   has_one :account
 
+  # teacher
+  has_many :services
+
   has_many :from_comments, :class_name => "Comment", :foreign_key => "from_user_id"
   has_many :to_comments, :class_name => "Comment", :foreign_key => "to_user_id"
 
@@ -37,10 +40,14 @@ class User < ActiveRecord::Base
 
   before_create do |user|
     user.account = Account.new
+    if user.type == 'Teacher' 
+      user.services = [RequestSchool.new(:name => I18n.t("tabs.request_school")),
+                        RequestVisa.new(:name => I18n.t("tabs.request_visa"))]
+    end
   end
 
   def address_show
-    "#{Province.cache_list.find {|c| c.id == self.province_id}.name}  #{self.address}"
+    self.province_id && "#{Province.cache_list.find {|c| c.id == self.province_id}.name}  #{self.address}"
   end
 
   def url_middle

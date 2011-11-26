@@ -1,3 +1,4 @@
+<% teacher = service.teacher %>
 <div class="box-item box-item-user">
   <div class="box-l">
     <div class="pt">
@@ -6,14 +7,14 @@
   </div>
   <div class="box-r">
     <div class="order-rate">
-      <%= "#{teacher.successful_orders_count}/#{teacher.orders_count}" %>
+      <%= "#{service.successful_orders_count}/#{service.orders_count}" %>
     </div>
     <div class="expense">
-      <%= teacher.send "#{request_expense}" %>
+      <%= service.expense %>
       <%= t("number.currency.format.unit") %>
     </div>
     <div class="member">
-      <%= link_to teacher.name, "/#{teacher.id}/home", 
+      <%= link_to teacher.name, "/countries/#{@cc}/request_#{request_type}/#{service.id}", 
         :target => "_blank" %>
       <span><%= teacher.address_show %></span>
     </div>

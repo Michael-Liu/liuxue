@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111124132614) do
+ActiveRecord::Schema.define(:version => 20111126130057) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "user_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20111124132614) do
     t.string   "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "service_id"
   end
 
   create_table "countries", :id => false, :force => true do |t|
@@ -39,8 +40,8 @@ ActiveRecord::Schema.define(:version => 20111124132614) do
     t.string "currency", :limit => 10
   end
 
-  create_table "countries_teachers", :id => false, :force => true do |t|
-    t.integer "teacher_id"
+  create_table "countries_services", :id => false, :force => true do |t|
+    t.integer "service_id"
     t.string  "country_id"
   end
 
@@ -93,6 +94,17 @@ ActiveRecord::Schema.define(:version => 20111124132614) do
     t.float    "ielts"
     t.float    "gmat"
     t.string   "photo",       :limit => 200
+  end
+
+  create_table "services", :force => true do |t|
+    t.string   "name"
+    t.integer  "expense"
+    t.integer  "user_id"
+    t.string   "type"
+    t.integer  "orders_count"
+    t.integer  "successful_orders_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "students", :force => true do |t|

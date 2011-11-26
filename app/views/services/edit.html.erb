@@ -1,0 +1,41 @@
+<% content_for :body_left do %>
+  <%= render :partial => "partials/tab_1", 
+    :locals => { 
+    :tabs => [{:active => false, :a => menus_account[0]},
+              {:active => true, :a => menus_other[0]}]} %>
+
+<div class="sub-body-left">
+  <%= form_for(@service, :as => "service", :url => service_path, :html => { :method => :put }) do |f| %>
+    <%= render :partial => "partials/error", :locals => {:error => @service} %>
+    <div class="tr">
+      <%= f.label :name, :class => "field" %>
+      <%= f.text_field :name, :disabled => true %>
+    </div>
+    <div class="tr">
+      <%= f.label :expense, :class => "field" %>
+      <%= f.text_field :expense %>
+      <%= t("number.currency.format.unit") %>
+    </div>
+    <div class="tr">
+      <%= f.label :countries, :class => "field" %>
+      <% service_country_ids = @service.country_ids %>
+      <% Country.cache_list.each do |country| %>
+        <input type="checkbox" name="countries[]" value="<%= country.id %>"
+        <%= service_country_ids.include?(country.id) && "checked" %>/>
+        <%= country.name %>
+      <% end %>
+    </div>
+    <div class="tr-btn">
+      <%= submit_tag t("buttons.save"), :class => "btn btn-submit" %>
+    </div>
+  <% end %>
+
+</div>
+
+<%= render :partial => "services/tip" %>
+
+<% end %>
+<% content_for :body_right do %>
+  <%= render :partial => "partials/home_menu", 
+    :locals => {:current_href => menus_account[0][:href]} %>
+<% end %>

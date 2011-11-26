@@ -20,20 +20,19 @@ Liuxue::Application.routes.draw do
   end
 
   match '/home' => 'users#home'
-  match '/:id/home' => 'users#show'
+  # match '/:id/home/(:type)' => 'users#show'
 
   resources :countries do
     resources :schools
-    resources :users do
-      collection do
-        get :request_school
-        get :request_visa
-      end
-    end
+    resources :users
+    resources :request_schools, :request_visas 
   end
 
   resources :users do
-    resources :comments, :messages
+    resources :messages
+  end
+  resources :services do
+    resources :comments
   end
 
   resource :account

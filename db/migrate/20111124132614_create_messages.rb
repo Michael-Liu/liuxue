@@ -4,7 +4,7 @@ class CreateMessages < ActiveRecord::Migration
       t.integer :from_user_id
       t.integer :to_user_id
       t.integer :status, :default => 1
-      t.string :body
+      t.string :body, :limit => 500
       t.timestamps
     end
   end

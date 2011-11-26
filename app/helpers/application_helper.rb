@@ -1,8 +1,8 @@
 module ApplicationHelper
   def tabs(country_code)
     [{:title => "select_school", :href => country_schools_path(country_code)},
-    {:title => "request_school", :href => request_school_country_users_path(country_code)},
-    {:title => "request_visa", :href => request_visa_country_users_path(country_code)}]
+    {:title => "request_school", :href => country_request_schools_path(country_code)},
+    {:title => "request_visa", :href => country_request_visas_path(country_code)}]
   end
 
   def page(p)
@@ -18,7 +18,7 @@ module ApplicationHelper
   end
 
   def menus_other
-    [{:title => t("tabs.teacher_infor"), :href => edit_teacher_path}]
+    [{:title => t("tabs.teacher_infor"), :href => services_path}]
   end
 
   def menus_order

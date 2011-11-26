@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :country_code
 
+  respond_to :html, :json
+
   # WillPaginate.per_page = 10
   #
   # devise

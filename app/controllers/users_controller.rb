@@ -10,14 +10,7 @@ class UsersController < ApplicationController
   # users#show
   def show
     @teacher = User.find(params[:id])
-  end
-
-  def request_school
-    @teachers = Teacher.request_school_visa("school", params)
-  end
-
-  def request_visa
-    @teachers = Teacher.request_school_visa("visa", params)
+    @type = params[:type] || 'school'
   end
 
   private

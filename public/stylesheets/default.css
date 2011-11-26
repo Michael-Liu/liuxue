@@ -551,17 +551,46 @@ ul.tabs-1 li.active a {
 }
 .send-success{
   position: absolute;
-  padding: 5px;
   float: left;
-  height: 20px;
   left: 180px;
   top: 20px;
 
+}
+.send-success, .no-result{
+  height: 20px;
+  padding: 5px;
   color: #F7B11A;
   background-color: #FFFFCA;
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
+}
+
+table {
+  border-collapse: collapse;
+  color: #686868;
+  width: 100%;
+  table-layout: fixed; /* 只有定义了表格的布局算法为fixed，下面td的定义才能起作用。 */
+}
+
+table tr td {
+  word-break: keep-all; /* 不换行 */
+  white-space: nowrap; /* 不换行 */
+  overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+  text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+table.list tr td{
+  padding: 5px 10px;
+}
+table.list thead tr {
+  border-top: 1px solid #0071BC;
+  background-color: #D8E5F4;
+}
+table.list tr td a{
+  color: #36C;
+}
+table.list tr td a:hover {
+  text-decoration: underline;
 }
 
 /** box-item school ***/

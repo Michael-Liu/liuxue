@@ -356,6 +356,8 @@ var $_comment = {
             slf.items(url, {page: page.index});
             callback();
           }});
+      }else{
+        $('#user_comments').html('<div class="no-result">暂时没有相关的评论</div>');
       }
     });
   },

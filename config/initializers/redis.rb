@@ -19,7 +19,7 @@ module Config
       end
 
       def get_object(key, cls)
-        puts "cache:::#{@@cache.get(key)}"
+        # puts "cache:::#{@@cache.get(key)}"
         JSON.parse(@@cache.get(key), :symbolize_names => true, 
                    :object_class => cls)
       end

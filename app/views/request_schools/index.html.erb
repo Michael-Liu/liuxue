@@ -1,0 +1,21 @@
+<%= render :partial => "partials/header_tab", 
+  :locals => {:tab_name => "request_school"} %>
+
+<div class="body-left">
+  <%= render :partial => "services/service", :collection => @services,
+    :locals => { :request_type => "schools" }%>
+</div>
+
+<div class="body-right">
+  <div class="box-tip">
+    <p>
+      <span class="order-rate"></span>
+      <%= t("help.order_rate") %>
+      <span class="expense"></span>
+      <%= t("help.request_school_expense") %>
+    </p>
+  </div>
+</div>
+<div class="clearfix"></div>
+
+<%= page @services %>

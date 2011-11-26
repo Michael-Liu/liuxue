@@ -1,0 +1,2 @@
+class RequestVisa < Service
+end

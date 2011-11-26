@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
 
   def index
-    @comments = Comment.includes(:from_user).where(:to_user_id => params[:user_id]).
+    @comments = Comment.includes(:from_user).
+      where(:service_id => params[:service_id]).
       order("created_at").page(params[:page])
     respond_to do |format|
       format.json do

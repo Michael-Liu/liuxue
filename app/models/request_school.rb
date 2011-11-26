@@ -1,0 +1,2 @@
+class RequestSchool < Service
+end

@@ -15,8 +15,8 @@ zh-CN:
     total_amount: "账户中实际存在的总金额"
     freeze_amount: "帐号中实际存在但是不可进行交易的金额"
     available_amount: "帐号中实际存在并且可进行交易的金额"
-    request_visa_expense: "为学生申请相应的学校应收取的服务费"
-    request_school_expense: "为学生申请留学签证应收取的服务费"
+    request_school_expense: "为学生申请相应的学校应收取的服务费"
+    request_visa_expense: "为学生申请留学签证应收取的服务费"
     request_school_visa_expense: "如果你两者都可以做，那么就全部填上相应的服务费数额；如果只会其一，那么填写你所擅长的就可以。"
     order_rate: "表示订单的成功比率（成功订单/总订单）"
     say_a_word: "说一句..."
@@ -39,6 +39,7 @@ zh-CN:
     next: "下一步"
     settings: "设置"
     send: "发送"
+    edit: "修改"
   tabs:
     select_school: "选择学校"
     request_school: "学校申请"
@@ -211,7 +212,6 @@ zh-CN:
         request_business: "可办申请"
         request_school_expense: "申请学校服务费"
         request_visa_expense: "申请签证服务费"
-        countries: "留学国家"
       account:
         total_amount: "帐号余额"
         available_amount: "可用余额"
@@ -239,6 +239,11 @@ zh-CN:
         body: "内容"
       message:
         body: "内容"
+      service:
+        name: "服务名称"
+        expense: "费用"
+        countries: "留学国家"
+        request_business: "可办申请"
     errors:
       template: # ~ 2.3.5 backward compatible
         header:

@@ -1,0 +1,34 @@
+<% content_for :body_left do %>
+  <%= render :partial => "partials/tab_1", 
+    :locals => { 
+    :tabs => [{:active => false, :a => menus_account[0]},
+              {:active => true, :a => menus_other[0]}]} %>
+
+<div class="sub-body-left">
+  <table class="list">
+    <thead>
+      <tr>
+        <td><%= Service.human_attribute_name(:name) %></td>
+        <td><%= Service.human_attribute_name(:expense) %>(<%= t("number.currency.format.unit") %>)</td>
+        <td>&nbsp;</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @services.each do |service| %>
+        <tr>
+          <td><%= service.name %></td>
+          <td><%= service.expense %></td>
+          <td><%= link_to t("buttons.edit"), edit_service_path(service.id) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= render :partial => "services/tip" %>
+
+<% end %>
+<% content_for :body_right do %>
+  <%= render :partial => "partials/home_menu", 
+    :locals => {:current_href => menus_account[0][:href]} %>
+<% end %>
