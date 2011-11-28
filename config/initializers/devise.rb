@@ -210,23 +210,12 @@ Devise.setup do |config|
   # end
 end
 
+# require "#{Rails.root}/extras/helpers/error_message_helper"
 # rewrite devise_error_messsages
 module DeviseHelper
+  # puts ":::::::::::::::::::::devise_helper:::::::::::::::::::"
+  include ::ErrorMessageHelper
   def devise_error_messages!
-    if !resource.nil? && !resource.errors.empty?
-
-      messages = 
-        "<ul>#{resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join}</ul>"
-    else
-      messages = flash[:notice] 
-    end
-
-    html = messages && <<-HTML
-    <div class="notice">
-    #{messages}
-    </div>
-    HTML
-
-    html && html.html_safe
+    out_error_message(resource)
   end
 end

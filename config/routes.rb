@@ -28,6 +28,10 @@ Liuxue::Application.routes.draw do
     resources :request_schools, :request_visas 
   end
 
+  resources :services do
+    resources :orders
+  end
+
   resources :users do
     resources :messages
   end
@@ -35,7 +39,7 @@ Liuxue::Application.routes.draw do
     resources :comments
   end
 
-  resource :account
+  resource :account, :orders
 
   # resource :users do
   #   member do

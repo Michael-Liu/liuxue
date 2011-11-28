@@ -57,7 +57,7 @@ class RegistrationsController < ::Devise::RegistrationsController
   end
 
   def set_layout
-    if ["new"].include?(params[:action])
+    if ["new", "create"].include?(params[:action])
       "application"
     else
       "bg"

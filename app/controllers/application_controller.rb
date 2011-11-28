@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   respond_to :html, :json
 
+  helper ErrorMessageHelper
+
   # WillPaginate.per_page = 10
   #
   # devise
@@ -34,7 +36,7 @@ class ApplicationController < ActionController::Base
   def auth
     unless user_signed_in?
       respond_to do |format|
-        format.html { redirect_to new_user_session }
+        format.html { redirect_to new_user_session_path }
         format.json { render :json => '-1' }
       end
     end

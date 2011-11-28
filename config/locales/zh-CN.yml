@@ -40,6 +40,7 @@ zh-CN:
     settings: "设置"
     send: "发送"
     edit: "修改"
+    order: "确认订单"
   tabs:
     select_school: "选择学校"
     request_school: "学校申请"
@@ -244,6 +245,9 @@ zh-CN:
         expense: "费用"
         countries: "留学国家"
         request_business: "可办申请"
+      order:
+        price: "费用"
+        num: "次数"
     errors:
       template: # ~ 2.3.5 backward compatible
         header:

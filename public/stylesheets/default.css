@@ -1033,6 +1033,9 @@ w-70, div.tr .w-70{
   font-size: 18px;
   padding: 8px 12px;
   color: #fff!important;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 .btn-green{
   border: 1px solid transparent;

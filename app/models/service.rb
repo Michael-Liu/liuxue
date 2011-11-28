@@ -3,6 +3,7 @@ class Service < ActiveRecord::Base
   belongs_to :teacher, :foreign_key => "user_id"
   has_and_belongs_to_many :countries
   has_many :comments
+  has_many :orders
 
   # validates_each :countries do |record, attr, value|
   #   record.errors.add(attr, I18n.t("errors.messages.empty")) if value.empty?
