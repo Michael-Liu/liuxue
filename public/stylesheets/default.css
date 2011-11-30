@@ -142,7 +142,7 @@ input[type="checkbox"], input[type="radio"] {
   float: left;
 }
 label{
-  color: #666;
+  color: #333;
 }
 .remember label{
   font-size: 11px;
@@ -271,6 +271,7 @@ div.tr .field_show{
   padding-top: 5px;
   padding-bottom: 5px;
   font-weight: bold;
+  font-size: 14px;
 }
 div.tr .field_show a{
   float: left;
@@ -287,6 +288,9 @@ div.tr-btn{
 }
 .f-available{
   color: #1F85D2;
+}
+.f-expense{
+  color: #D87F00;
 }
 
 /****************************/
@@ -812,7 +816,10 @@ w-70, div.tr .w-70{
   width: 100%;
 }
 .notice {
-  background: #FFFFCA;
+  /** background: #FFFFCA; **/
+  background-color: #FFFBC1;
+  /** border: 1px solid #F9B965; **/
+  color: #E80211;
   position: relative;
   padding: 5px 10px;
   margin: 5px 0;
@@ -1012,6 +1019,7 @@ w-70, div.tr .w-70{
   background-image: linear-gradient(top,#DD4B39,#D14836);
 }
 .btn-buy, .btn-buy:hover, 
+.btn-recharge, .btn-recharge:hover, 
 .btn-red:hover {
   border: 1px solid #B0281A;
   color: white;
@@ -1029,13 +1037,17 @@ w-70, div.tr .w-70{
   -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
-.btn-buy{
+.btn-buy, .btn-recharge{
   font-size: 18px;
   padding: 8px 12px;
   color: #fff!important;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+.btn-recharge {
+  font-size: 14px;
+  padding: 6px 10px;
 }
 .btn-green{
   border: 1px solid transparent;

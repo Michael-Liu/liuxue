@@ -1,17 +1,35 @@
+<% account = current_user.account %>
 <%= form_for @order, :url => service_orders_path(@order.service.id) do |f| %>
   <%= out_error_message @order %>
+  <% if account.available_amount < @order.price %>
+    <div class="notice">
+      <%= t("errors.account.not_enough") %>
+      <%= link_to t("buttons.recharge"), "", :class => "btn btn-recharge" %>
+    </div>
+  <% end %>
+  <div class="tr">
+    <%= label_tag :name, Service.human_attribute_name(:name), :class => "field" %>
+    <div class="field_show">
+      <%= @order.service.name %>
+    </div>
+  </div>
   <div class="tr">
     <%= f.label :price, :class => "field" %>
-    <div class="field_show">
+    <div class="field_show f-expense">
       <%= @order.price %>
       <%= t("number.currency.format.unit") %>
     </div>
   </div>
   <div class="tr">
-    <%= f.label :num, :class => "field" %>
-    <%= f.select :num, 1..9 %>
+    <%= label_tag :available, Account.human_attribute_name(:available_amount), :class => "field" %>
+    <div class="field_show f-available">
+      <%= account.available_amount %>
+      <%= t("number.currency.format.unit") %>
+    </div>
   </div>
   <div class="tr-btn">
-    <%= f.submit t("buttons.order"), :class => "btn btn-submit" %>
+    <% if account.available_amount >= @order.price %>
+      <%= f.submit t("buttons.order"), :class => "btn btn-submit" %>
+    <% end %>
   </div>
 <% end %>

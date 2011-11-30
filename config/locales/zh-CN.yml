@@ -25,6 +25,7 @@ zh-CN:
     sign_in: "登录"
     sign_up: "注册"
     buy: "购买服务"
+    recharge: "点击充值"
     save: "保存"
     exit: "退出"
     upload: "上传"
@@ -242,7 +243,7 @@ zh-CN:
         body: "内容"
       service:
         name: "服务名称"
-        expense: "费用"
+        expense: "服务费用"
         countries: "留学国家"
         request_business: "可办申请"
       order:
@@ -292,6 +293,8 @@ zh-CN:
   errors:
     success: "操作成功"
     send_message_success: "留言成功"
+    account:
+      not_enough: "帐号可用余额不足"
     condition:
       over_max: "您的搜索结果已经超出了最大限制"
     email_password: "用户名，密码错误，请重新输入"
