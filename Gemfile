@@ -25,7 +25,7 @@ gem 'nokogiri'
 # task
 gem 'whenever', :require => false
 
-# redis cache
+## redis cache
 gem 'SystemTimer'
 gem 'redis'
 gem 'redis-store', '1.0.0.rc1'
