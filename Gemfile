@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.7'
+# gem 'rails', '3.1.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -8,6 +9,7 @@ gem 'rails', '3.0.7'
 gem 'mysql'
 # gem 'nifty-generators'
 gem 'devise'
+# gem 'json', '1.5.1'
 
 gem 'will_paginate' , '3.0.1'
 

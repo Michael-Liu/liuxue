@@ -1,5 +1,6 @@
 require 'redis'
 require 'active_record'
+require 'json'
 
 module Config
   class Redis
@@ -19,9 +20,7 @@ module Config
       end
 
       def get_object(key, cls)
-        # puts "cache:::#{@@cache.get(key)}"
-        JSON.parse(@@cache.get(key), :symbolize_names => true, 
-                   :object_class => cls)
+        JSON.parse(@@cache.get(key), :symbolize_names => true, :object_class => cls)
       end
 
       def set_object(key, object)
@@ -55,6 +54,7 @@ $_app_cache.init
   #   end
   # end
 end
+
 
 ActiveRecord::Base.instance_eval do
   def cache_list

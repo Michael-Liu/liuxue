@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(:version => 20111126130057) do
   create_table "messages", :force => true do |t|
     t.integer  "from_user_id"
     t.integer  "to_user_id"
-    t.integer  "status",       :default => 1
-    t.string   "body"
+    t.integer  "status",                      :default => 1
+    t.string   "body",         :limit => 500
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -101,8 +101,8 @@ ActiveRecord::Schema.define(:version => 20111126130057) do
     t.integer  "expense"
     t.integer  "user_id"
     t.string   "type"
-    t.integer  "orders_count"
-    t.integer  "successful_orders_count"
+    t.integer  "orders_count",            :default => 0
+    t.integer  "successful_orders_count", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

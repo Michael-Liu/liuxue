@@ -22,7 +22,8 @@ class User < ActiveRecord::Base
     :styles => {:thumb => "120x120>", :default => "80x80>",
       :middle => "48x48>", :small => "24x24>"},
     :url => "/upload/users/:attachment/:id/:style.:extension",
-    :path => "#{RAILS_ROOT}/public/upload/users/:attachment/:id/:style.:extension"
+    # :path => "#{::RAILS_ROOT}/public/upload/users/:attachment/:id/:style.:extension"
+    :path => "#{Rails.root}/public/upload/users/:attachment/:id/:style.:extension" # > 3.1
 
   validates_attachment_size :avatar, :less_that => 5000000 # about 5 Mb
   # validates_attachment_content_type, ;avatar, :content_type => "image/jpg"
